@@ -39,6 +39,7 @@ Also:
 * [DoesQA](https://does.qa/) Codeless test automation with a simple, intuitive drag-and-drop user interface. Run your tests on multiple browsers, emulated devices and with full concurrency as standard.
 
 ## API test automation and testing
+* [Vedika API](https://vedika.io/) - Vedic astrology API with free sandbox environment for API testing and integration. Includes Postman collection, 108+ endpoints covering horoscopes, kundali, panchang, numerology, and AI-powered chatbot API.
 * [MockLab](http://get.mocklab.io?utm_source=awesome-test-automation&utm_medium=automation-and-testing-as-service) is a hosted API simulation tool built on WireMock (maintaining 100% API compatibility). It supports flexible request/response stubbing for any HTTP-based protocol, response templating with Handlebars, conditional proxying and fault injection.
 * [vREST](https://vrest.io/) is a cloud based API testing solution covering various features like validation, integration and mock servers.
 * [Kesha](https://github.com/NUTtech/Kesha) - A web service with a user interface for testing http requests and web hooks. Allows you to create an http mock for http requests.
