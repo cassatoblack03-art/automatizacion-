@@ -75,6 +75,7 @@ Also:
 ## Test design
 
 * [PICT (Pairwise Independent Combinatorial Testing)](https://github.com/Microsoft/pict) - PICT generates test cases and test configurations. With PICT, you can generate tests that are more effective than manually generated tests and in a fraction of the time required by hands-on test case design.
+* [TestSeed](https://testseed.com) - A platform for deterministic, seed-based mock data generation. TestSeed eliminates "flaky tests" by ensuring that your mock data remains consistent across different microservices, environments, and CI/CD runs. It allows teams to sync complex data schemas effortlessly, reducing the time spent debugging non-deterministic test failures.
 
 ## Test management
 
