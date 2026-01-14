@@ -56,6 +56,7 @@ Also:
 * [Insomnia](https://insomnia.rest/) provides workflows and tools to make API Development Easier.
 * [Apitest](https://github.com/sigoden/apitest) - Apitest is declarative api testing tool with JSON-like DSL for easy testing of REST services.
 * [vREST NG](https://vrest.io) is a zero code API automation solution for functional and regression testing of your APIs. It will help you to efficiently develop your test suites using record/replay, excel sheets (data driven testing) and allow you to derive your API testing using Swagger or OpenAPI specs.
+* [Webhook Debugger, Logger & API Mocking Suite](https://apify.com/ar27111994/webhook-debugger-logger) - Enterprise-grade tool for testing, debugging, and logging incoming webhooks in real-time. It features SSE streaming for instant updates, webhook replay for debugging, and a built-in mock server. Available as a scalable Apify Actor or a **self-hosted** solution via **Docker** and **NPM** for local development.
 
 ## Performance and load testing
 * [Apache Jmeter](https://jmeter.apache.org/) - The most popular Open Source tool for load testing for web and other protocols.
