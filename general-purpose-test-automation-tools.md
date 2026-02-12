@@ -87,6 +87,7 @@ Where to discover new libraries, information, tools, etc.
 
 * [automated-testing.info](http://automated-testing.info) - Test automation community
 * [atinfo.github.io/at.info-knowledge-base](http://atinfo.github.io/at.info-knowledge-base/)  - Knowledge base for test automation examples on different tools and technologies
+* [QASkills.sh](https://qaskills.sh) - Curated directory of 20+ QA testing skills for AI coding agents. Covers E2E (Playwright, Cypress, Selenium), API (REST Assured, Postman), performance (k6, JMeter), security (OWASP), and more. Built by The Testing Academy with support for 27+ AI agents and CLI for easy skill installation.
 * [Testomat.io](https://testomat.io/) - test management and reporting system for automated tests
 
 # Other Awesome Test Automation Lists
