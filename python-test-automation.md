@@ -321,6 +321,7 @@ Libraries that may help you to build better test automation.
 * [prettyprinter](https://github.com/tommikaikkonen/prettyprinter) - Syntax-highlighting, declarative and composable pretty printer for Python 3.5+
 * [jsonschema](https://github.com/Julian/jsonschema) - JSON Schema implementation
 for Python. Powerful tool for validating the structure of JSON data.
+* [voicetest](https://github.com/voicetestdev/voicetest) - Open-source test harness for voice AI agents. Uses DSPy for LLM-based evaluation of call transcripts, supports Retell, VAPI, LiveKit, and Bland platforms with CI/CD integration.
 
 # Resources
 Where to discover new libraries, information, tools, etc.
