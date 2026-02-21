@@ -79,6 +79,7 @@ Also:
 ## Test management
 
 * [Testomat.io](https://testomat.io/) - test management and reporting system for javascript automated tests
+* [TestCollab](https://testcollab.com/features/ai-test-case-generation) – AI-powered test management platform with test case generation from screenshots, URLs, and requirements.
 
 # Resources
 Where to discover new libraries, information, tools, etc.
