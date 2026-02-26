@@ -9,6 +9,7 @@ Table of content:
 - [Functional Testing](#functional-testing)
 - [Performance and load testing](#performance-and-load-testing)
 - [Security testing](#security-testing)
+- [Accessibility testing](#accessibility-testing)
 - [REST API testing](#api-testing)
 - [Test design](#test-design)
 - [Test management](#test-management)
@@ -67,6 +68,14 @@ Also:
 * [OWASP Glue](https://github.com/OWASP/glue) - Glue is a framework for running a series of tools. Generally, it is intended as a backbone for automating a security analysis pipeline of tools.
 * [Cloudquery](https://github.com/cloudquery/cloudquery) - Cloudquery transforms your cloud infrastructure to relational database. Giving you the power to run security and compliance checks with SQL statements.
 * [Burp Suite](https://portswigger.net/burp) it is a platform for performing web application security testing.
+
+## Accessibility testing
+
+* [axe-core](https://github.com/dequelabs/axe-core) - An accessibility engine for automated Web UI testing. Powers browser extensions, CI integrations, and developer tools. Open source from Deque Systems.
+* [Pa11y](https://github.com/pa11y/pa11y) - Pa11y is a command-line interface which loads web pages and highlights any accessibility issues it finds. Useful for CI/CD pipeline integration.
+* [WAVE](https://wave.webaim.org/) - WAVE is a suite of evaluation tools that helps identify accessibility and WCAG errors on web pages. Available as a browser extension and API.
+* [RatedWithAI](https://ratedwithai.com) - AI-powered website accessibility scanner that checks WCAG 2.2 compliance and generates detailed reports with fix recommendations. Free tier available.
+* [Lighthouse](https://github.com/GoogleChrome/lighthouse) - Lighthouse is an open-source, automated tool from Google for improving the quality of web pages. It has audits for performance, accessibility, progressive web apps, SEO, and more.
 
 ## Windows GUI automation
 
