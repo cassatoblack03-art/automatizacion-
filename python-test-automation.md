@@ -269,6 +269,7 @@ Also:
 * [unittest-xml-reporting](https://github.com/xmlrunner/unittest-xml-reporting) - A unittest test runner that can save test results to XML files that can be consumed by a wide range of tools, such as build systems, IDEs and continuous integration servers.
 * [PrettyTable](https://github.com/jazzband/prettytable) - Python library to generate nice table reports right in console.
 * [pytest-html](https://github.com/pytest-dev/pytest-html) - Plugin for generating HTML reports for PyTest results.
+* [TestDino](https://testdino.com/)) - Tool for playwright reporting with MCP support
 
 ## Documentation generation
 
