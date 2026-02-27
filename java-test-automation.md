@@ -188,6 +188,7 @@ Also:
 * [Difido-reports](http://top-q.github.io/difido-reports/) - This project aims to provide a generic implementation for HTML test reports.
 * [cucumber-reporting](https://github.com/damianszczepanik/cucumber-reporting) - This is a Java report publisher primarily created to publish cucumber reports on the Jenkins build server. It publishes pretty html reports with charts showing the results of cucumber runs. It has been split out into a standalone package so it can be used for Jenkins and maven command line as well as any other packaging that might be useful. Generated report has no dependency so can be viewed offline.
 * [Cluecumber](https://github.com/trivago/cluecumber) - This is reporting library for the Cucumber JSON format as it is produced by Cucumber and Karate. It provides clear and concise HTML reports and is highly customizable.
+* [TestDino](https://github.com/TestDinoHQ)) - AI-native Quality Intelligence for Playwright.
 
 ## Documentation generation
 
