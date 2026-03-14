@@ -79,6 +79,7 @@ Also:
 ## Test management
 
 * [Testomat.io](https://testomat.io/) - test management and reporting system for javascript automated tests
+* [Gwirian CLI](https://github.com/TheAcmada/gwirian-cli) - CLI and TUI for the [Gwirian](https://www.gwirian.com/) platform (projects, features, scenarios, scenario executions) from the terminal or CI.
 
 # Resources
 Where to discover new libraries, information, tools, etc.

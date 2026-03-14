@@ -10,6 +10,7 @@ Table of content:
 - [API test automation and testing](#api-test-automation-and-testing)
 - [Performance and load testing](#performance-and-load-testing)
 - [Security testing](#security-testing)
+- [Test management](#test-management)
 - [Reporting](#reporting)
 
 Also:
@@ -63,6 +64,10 @@ Also:
 * [WebSecurify](http://www.websecurify.com/) - One of the famous Web Application Security Scanner
 * [Hacktarget.com](https://hackertarget.com/) - Simplify the security assessment process with hosted vulnerability scanning tools.
 * [Scan My Server](https://www.scanmyserver.com/) - Free tool for Web Security scanning.
+
+## Test management
+
+* [Gwirian](https://www.gwirian.com/) - Platform for managing BDD scenarios and feature tests. Use the [Gwirian CLI](https://github.com/TheAcmada/gwirian-cli) from the terminal or CI.
 
 ## Reporting
 * [Testomat.io](https://testomat.io/) - test management and reporting system for automated tests
