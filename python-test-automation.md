@@ -173,6 +173,7 @@ Also:
     * [Golem](https://github.com/lucianopuccio/golem) - Golem is a complete test automation tool and framework for end-to-end testing. It creates powerful, robust and maintainable test suites, it's easy to learn even without a lot of programming knowledge. It is based on Selenium Webdriver and it can be extended using Python
     * [Pylenium.io](https://elsnoman.gitbook.io/pylenium/) - Pylenium brings the best of Selenium, Cypress and Python into one package.
     * [Playwright](https://github.com/microsoft/playwright-python) - Playwright is a Python library to automate Chromium, Firefox and WebKit browsers with a single API. Playwright delivers automation that is ever-green, capable, reliable and fast.
+    * [wopee_rf](https://docs.wopee.io/robot-framework/) - Robot Framework library for visual regression testing powered by [Wopee.io](https://wopee.io).
 
 ## Mobile test automation
 
