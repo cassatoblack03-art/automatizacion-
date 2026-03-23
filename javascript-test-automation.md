@@ -105,6 +105,8 @@ No dependencies, works with any unit testing framework.
 * [BackstopJS](https://github.com/garris/BackstopJS) - BackstopJS automates visual regression testing of your responsive web UI by comparing DOM screenshots over time.
 * [Taiko](https://github.com/getgauge/Taiko) - A Node.js library to test and automate chromium browsers.
 * [QA Wolf](https://github.com/qawolf/qawolf) - A Node.js library to create browser tests 10x faster with Puppeteer and Jest.
+* [@wopee-io/wopee.cy](https://docs.wopee.io/cypress/) - Cypress plugin for visual regression testing powered by [Wopee.io](https://wopee.io).
+* [@wopee-io/wopee.pw](https://docs.wopee.io/playwright-visual-testing/) - Playwright plugin for visual regression testing powered by [Wopee.io](https://wopee.io).
 
 
 ## API automation
