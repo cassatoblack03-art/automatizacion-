@@ -18,7 +18,7 @@ Also:
 - [Other Awesome Test Automation Lists](#other-awesome-test-automation-lists)
 - [Contributing](#contributing)
 
----
+--- 
 
 ## Web test automation and testing
 
