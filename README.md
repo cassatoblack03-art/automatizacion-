@@ -25,3 +25,4 @@ Press [like](https://github.com/atinfo/awesome-test-automation/stargazers) to su
 # [Contribution](https://github.com/atinfo/awesome-test-automation/blob/master/CONTRIBUTING.md)
 
 Feel free to fork and add new content! Your contributions are always welcome! 
+- [Gitstar](https://dev.gitstar.ai?utm_medium=github_readme&utm_source=awesome_list&utm_campaign=atinfo_awesome-test-automation) - Follow developers on GitHub and get a feed of what they star and build.
