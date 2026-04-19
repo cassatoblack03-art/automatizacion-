@@ -25,3 +25,6 @@ Press [like](https://github.com/atinfo/awesome-test-automation/stargazers) to su
 # [Contribution](https://github.com/atinfo/awesome-test-automation/blob/master/CONTRIBUTING.md)
 
 Feel free to fork and add new content! Your contributions are always welcome! 
+
+- **[Agent Shadow Brain](https://github.com/theihtisham/agent-shadow-brain)** - Self-evolving AI coding intelligence with infinite memory (TurboQuant), genetic algorithm self-evolution, predictive bug detection, PageRank knowledge graphs, swarm intelligence, and adversarial defense.
+- **[Omni Skills Forge](https://github.com/theihtisham/omni-skills-forge)** - 50,000+ curated AI agent skills for Claude Code, Cursor, Copilot, Windsurf, Cline. Visual dashboard, one-click install, skill doctor, auto-update.
