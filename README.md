@@ -19,6 +19,10 @@ Also we are supporting and looking for contribution for project:
 
 * [practical test automation by examples](https://github.com/atinfo/at.info-knowledge-base)
 
+# Other Awesome Lists
+
+* [awesome-ai-testing](https://github.com/tugkanboz/awesome-ai-testing) - A curated list of AI-powered testing tools, frameworks, and resources for QA engineers.
+
 # Notifications
 Press [like](https://github.com/atinfo/awesome-test-automation/stargazers) to support us and [watch](https://github.com/atinfo/awesome-test-automation/subscription) repository to receive updates.
 
