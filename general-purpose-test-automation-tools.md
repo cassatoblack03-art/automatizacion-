@@ -76,6 +76,10 @@ Also:
 
 * [PICT (Pairwise Independent Combinatorial Testing)](https://github.com/Microsoft/pict) - PICT generates test cases and test configurations. With PICT, you can generate tests that are more effective than manually generated tests and in a fraction of the time required by hands-on test case design.
 
+## AI-guided test orchestration
+
+* [Helix](https://github.com/Thitic9203/helix) - Plugin/skill pack that guides AI coding tools (Claude Code, Copilot CLI, Gemini CLI, Cursor) through a structured QA lifecycle. Ships 14 QA skills aligned to ISO 25010, ISTQB CTFL v4.0, IEEE 829, and ISO 31000 — covering test strategy, risk matrix, 3-tier test execution, exploratory testing (SBTM), defect reports with 5-Whys RCA, and sign-off decisions.
+
 ## Test management
 
 * [Testomat.io](https://testomat.io/) - test management and reporting system for javascript automated tests
