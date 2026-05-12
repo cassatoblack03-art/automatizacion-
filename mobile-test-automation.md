@@ -9,6 +9,7 @@ Table of content:
 - [Cross-platform tools](#cross-platform-tools)
 - [Android](#android)
 - [iOS](#ios)
+- [Sample Apps for Practice](#sample-apps-for-practice)
 - [Environment](#environment)
 
 Make a pull request to add new chapter
@@ -47,6 +48,12 @@ Also:
 * [XCUITest](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/09-ui_testing.html) is the automation framework that ships with Apple's XCode. The XCTest framework lets iOS app developers create and run unit tests, performance tests and UI tests for XCode projects.
     * [Flank](https://github.com/Flank/flank) Flank is a massively parallel Android and iOS test runner for Firebase Test Lab.
     * [Cucumberish](https://github.com/Ahmed-Ali/Cucumberish) Cucumberish is a test automation framework for Behaviour Driven Development (BDD). It is inspired by the amazing way of writing automated test cases introduced originally in Cucumber using the Gherkin language.
+
+## Sample Apps for Practice
+
+Real-world-style mobile applications designed specifically as test automation practice surfaces — useful for learning a new framework, comparing tools, or running hands-on training programmes against something more substantial than a TODO app.
+
+* [FrontRow](https://github.com/majdukovic/frontrow) - An open-source React Native concert ticketing app built specifically as a QA automation training surface. Stable cross-platform testIDs (Maestro / Appium / Espresso / XCUITest all hit the same selectors), a deep QA Debug Menu with seed scenarios, time travel, force-error modes (4xx / 5xx / timeout / offline), and deterministic in-app purchase outcomes. Includes 30 Maestro flows and bridged Swift / Kotlin native screens. MIT licensed, no backend, runs in a simulator in five minutes.
 
 ## Environment
 
