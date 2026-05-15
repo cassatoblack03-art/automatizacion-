@@ -218,6 +218,7 @@ Also:
 * [Schemathesis](https://github.com/kiwicom/schemathesis) - Schemathesis is a tool for property-based testing of applications based on Open API & Swagger specs. It reads the application schema and generates test cases which will ensure that your application is compliant with its schema. Includes `pytest` & `unittest` integrations.
 * [httprunner](https://github.com/httprunner/httprunner) - A simple & elegant, yet powerful HTTP(S) testing framework. Support record and generate testcases with HAR support.
 * [tavern](https://github.com/taverntesting/tavern) - A command-line tool and Python library and Pytest plugin for automated testing of RESTful APIs, with a simple, concise and flexible YAML-based syntax
+* [postman2pytest](https://github.com/golikovichev/postman2pytest) - Converts Postman Collection v2.1 JSON files into executable pytest test suites. Bridges the gap between API documentation kept in Postman and automated regression coverage. CLI tool, published on PyPI.
 
 ## Virtual environments
 
