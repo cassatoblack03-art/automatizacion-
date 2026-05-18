@@ -124,6 +124,8 @@ Also:
 * [hacking](https://github.com/openstack-dev/hacking) - OpenStack Hacking Style Checks (`flake8` plugins).
 * [prospector](https://github.com/landscapeio/prospector) - A tool to analyse Python code and output information about errors, potential problems, convention violations and complexity.
 * [wemake-python-styleguide](https://github.com/wemake-services/wemake-python-styleguide) - The strictest and most opinionated python linter ever!
+* [deadcode](https://github.com/Coding-Dev-Tools/deadcode) - Static analysis CLI that detects and removes dead code in Python and JavaScript projects, reducing attack surface and maintenance burden.
+
 * [pytest-cov](https://github.com/pytest-dev/pytest-cov) - Pytest plugin which helps you identify parts of code that have been executed by your tests.
 
 
@@ -218,6 +220,8 @@ Also:
 * [Schemathesis](https://github.com/kiwicom/schemathesis) - Schemathesis is a tool for property-based testing of applications based on Open API & Swagger specs. It reads the application schema and generates test cases which will ensure that your application is compliant with its schema. Includes `pytest` & `unittest` integrations.
 * [httprunner](https://github.com/httprunner/httprunner) - A simple & elegant, yet powerful HTTP(S) testing framework. Support record and generate testcases with HAR support.
 * [tavern](https://github.com/taverntesting/tavern) - A command-line tool and Python library and Pytest plugin for automated testing of RESTful APIs, with a simple, concise and flexible YAML-based syntax
+* [api-contract-guardian](https://github.com/Coding-Dev-Tools/api-contract-guardian) - Catch breaking API changes in CI by comparing OpenAPI spec versions. Plug into pytest or any CI pipeline to enforce API backward compatibility.
+
 
 ## Virtual environments
 
