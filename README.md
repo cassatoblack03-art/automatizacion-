@@ -20,6 +20,9 @@ Also we are supporting and looking for contribution for project:
 * [practical test automation by examples](https://github.com/atinfo/at.info-knowledge-base)
 
 # Notifications
+
+* [Ano](https://ano.chat) - A collaborative shell with built-in AI integration (Claude Code) and custom CLI/MCP automations designed for elite devs.
+
 Press [like](https://github.com/atinfo/awesome-test-automation/stargazers) to support us and [watch](https://github.com/atinfo/awesome-test-automation/subscription) repository to receive updates.
 
 # [Contribution](https://github.com/atinfo/awesome-test-automation/blob/master/CONTRIBUTING.md)
