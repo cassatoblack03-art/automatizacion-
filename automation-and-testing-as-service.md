@@ -45,6 +45,7 @@ Also:
 * [Mockachino](https://www.mockachino.com/) [github repo](https://github.com/czhu12/mockachino) Create a Mock API in Seconds. No Accounts, Free Forever. Share Your Space with Teammates.
 * [Step CI](https://stepci.com) [github repo](https://github.com/stepci/stepci) Open-source framework for API Quality Assurance.
 * [Keploy](https://www.keploy.io) [github repo](https://github.com/keploy/keploy) Keploy is a no-code testing platform that generates tests from API calls.
+* [Beeceptor](https://beeceptor.com/api-virtualization/) - API virtualization and mock server platform for QA to simulate external and 3rd party services, chaos and resiliency testing. In addition, it brings _continuous API contract drift detection_ without custom contract testing frameworks.
 
 ## Mobile test automation
 * [Hive CI](http://bbc.github.io/hive-ci/) is a CI system built around devices. Connect your physical devices to a hive and run your tests on the same platforms as your users
