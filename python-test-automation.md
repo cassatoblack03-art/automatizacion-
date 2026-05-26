@@ -44,6 +44,7 @@ Also:
     * [nosetests](https://nose.readthedocs.org/en/latest/) - is a nicer testing for python.
     * [slash](https://github.com/slash-testing/slash) - is a testing framework written in Python.
     * [lemoncheesecake](https://github.com/lemoncheesecake/lemoncheesecake) - is a Python framework intended to functional testing, it provides fixtures, matchers, test organization through test suites hierarchy and metadata (test/suite name, description, tags, properties, links), rich reporting features and various report formats (JSON, XML, HTML, Junit)
+    * [Jumpstarter](https://github.com/jumpstarter-dev/jumpstarter) - a hardware-in-the-loop testing framework for cloud-native CI/CD pipelines.
 - extensions
     * [proboscis](https://pythonhosted.org/proboscis/) -  is a Python test framework that extends Python’s built-in unittest module and Nose with features from TestNG.
     * [grail](https://github.com/wgnet/grail) - is a library which allows test script creation based on steps.
