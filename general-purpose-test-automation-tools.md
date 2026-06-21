@@ -56,6 +56,7 @@ Also:
 * [Insomnia](https://insomnia.rest/) provides workflows and tools to make API Development Easier.
 * [Apitest](https://github.com/sigoden/apitest) - Apitest is declarative api testing tool with JSON-like DSL for easy testing of REST services.
 * [vREST NG](https://vrest.io) is a zero code API automation solution for functional and regression testing of your APIs. It will help you to efficiently develop your test suites using record/replay, excel sheets (data driven testing) and allow you to derive your API testing using Swagger or OpenAPI specs.
+* [Parlel](https://github.com/dksingh1997/parlel) - Parlel is an open-source set of 250+ service emulators (Stripe, Postgres, Slack, S3, Kafka and more) you run locally with docker compose, speaking real wire protocols so unmodified client libraries connect to localhost for integration tests and CI without hitting real services.
 
 ## Performance and load testing
 * [Apache Jmeter](https://jmeter.apache.org/) - The most popular Open Source tool for load testing for web and other protocols.
