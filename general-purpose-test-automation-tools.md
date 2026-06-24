@@ -75,6 +75,8 @@ Also:
 ## Test design
 
 * [PICT (Pairwise Independent Combinatorial Testing)](https://github.com/Microsoft/pict) - PICT generates test cases and test configurations. With PICT, you can generate tests that are more effective than manually generated tests and in a fraction of the time required by hands-on test case design.
+* [MockJutsu](https://github.com/altansayan/mock-jutsu-api) - Algorithmic open-source mock data engine generating 390+ format-valid types with real checksums (IBAN, TCKN, Luhn, VIN, NHS, SWIFT, MRZ and more). CLI + REST API + Python
+  package + JMeter plugin, 6 locales.
 
 ## Test management
 
