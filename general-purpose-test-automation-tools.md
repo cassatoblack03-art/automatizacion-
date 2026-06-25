@@ -78,6 +78,7 @@ Also:
 
 ## Test management
 
+* [Gitoza](https://gitoza.com/) - A local-first test case manager built with Rust and Tauri, storing cases as YAML files inside Git.
 * [Testomat.io](https://testomat.io/) - test management and reporting system for javascript automated tests
 
 # Resources
