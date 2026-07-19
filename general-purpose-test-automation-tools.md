@@ -24,6 +24,7 @@ Also:
 ---
 
 ## Functional testing
+* [hotato](https://github.com/attenlabs/hotato) - Open source regression testing for voice agents: scores turn timing from call recordings, checks what the agent said against what the backend did, and gates CI on the exit code.
 * [gauge](https://gauge.org/) Lightweight cross-platform test automation.
 * [STAF](http://staf.sourceforge.net/) The Software Testing Automation Framework (STAF) is an open source, multi-platform, multi-language framework designed around the idea of reusable components, called services (such as process invocation, resource management, logging, and monitoring). STAF removes the tedium of building an automation infrastructure, thus enabling you to focus on building your automation solution. The STAF framework provides the foundation upon which to build higher level solutions, and provides a pluggable approach supported across a large variety of platforms and languages.
 * [Cerberus](https://github.com/cerberustesting/cerberus-source) is a low-code software testing automation enabling continuous testing at scale. The solution allows the collaboration of the teams from the use-cases definition to the test case execution on the variety of browsers, devices, apps and APIs. It supports various integrations for speed of implementation such as Jenkins, Bitbucket,  Slack, Kafka. It is available and maintained in open-source by various digital and retail players such as La Redoute, Decathlon, Adeo, Norauto.
