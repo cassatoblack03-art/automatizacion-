@@ -41,6 +41,7 @@ Also:
 * [Ggr](https://github.com/aandryashin/ggr) - active load balancer to create scalable and highly-available Selenium cluster.
 * [Selenoid](https://github.com/aandryashin/selenoid) - alternative Selenium Hub running browsers within containers.
 * [RedwoodHQ](https://github.com/dmolchanenko/RedwoodHQ) - RedwoodHQ is a free Open Source test automation framework that allows multiple users to develop automation code, create readable action/keyword driven test cases and execute them all under a single Web interface.
+* [Kane CLI](https://www.testmuai.com/kane-cli/) - AI-driven browser testing tool that runs tests described in natural language in a real browser, without selectors, and supports two-way migration with Playwright and Selenium.
 
 ## API testing
 
