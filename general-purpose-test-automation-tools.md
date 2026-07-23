@@ -78,6 +78,7 @@ Also:
 
 ## Test management
 
+* [FlakeTrack](https://github.com/cbrown350/flaketrack) - GitHub Action that detects, trends, and quarantines flaky JUnit tests, storing the full history in your own repo (a branch, Issues, and a static GitHub Pages dashboard) with no external account or server required.
 * [Testomat.io](https://testomat.io/) - test management and reporting system for javascript automated tests
 
 # Resources
