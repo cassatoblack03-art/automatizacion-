@@ -332,6 +332,7 @@ Where to discover new libraries, information, tools, etc.
 * [automated-testing.info](http://automated-testing.info) - Test automation community
 * [atinfo.github.io/at.info-knowledge-base](http://atinfo.github.io/at.info-knowledge-base/)  - Knowledge base for test automation examples on different tools and technologies
 
+* [Awesome Behave](https://github.com/MathiasPaulenko/awesome-behave#readme) - A curated list of Behave resources, tools, and libraries for Python BDD.
 # Other Awesome Test Automation Lists
 
 * [python test automation](https://github.com/atinfo/awesome-test-automation/blob/master/python-test-automation.md)
