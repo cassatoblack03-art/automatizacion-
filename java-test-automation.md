@@ -97,6 +97,7 @@ Also:
     * [Cubano](https://concordion.org/cubano/framework) - Cubano is a test automation framework written in Java that provides a structure for developing acceptance and regression tests so your team can hit the ground running and not have to waste time needlessly building and maintaining your own framework.
     * [Jalenium](https://lkkushan.gitbook.io/jalenium/) - Jalenium is a Java Selenium API which can be easily integrated to any maven Selenium Java project which uses Selenium JAR files.
     * [TestZeus](http://testzeus.com/) - Open source UI Test automation framework built specifically for Salesforce with Autolocators.
+    * [Selenium Boot](https://seleniumboot.com) - Opinionated Selenium + TestNG framework for Java. Driver lifecycle, explicit waits, retries, HTML reporting and CI pass-rate gates are preconfigured from a single Maven dependency and one YAML file.
     
 - extensions
     * [BrowserMob Proxy](https://github.com/lightbody/browsermob-proxy) - Is a simple utility that makes it easy to capture performance data from browsers, typically written using automation toolkits such as Selenium and Watir.
