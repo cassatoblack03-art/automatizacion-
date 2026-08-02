@@ -38,6 +38,7 @@ Also:
 * [VIVIDUS](https://docs.vividus.dev/) - a test automation tool that offers already implemented solution for testing of most popular application types. No coding skills are required.
 
 ## Web UI test automation
+* [five46](https://github.com/sekharsdet/five46) - BYOK CLI that drives a real Playwright browser (or real HTTP requests, for API testing) toward a plain-English goal using your own LLM key, entirely locally, and writes the result as a real, standalone Playwright/node:test file.
 * [Ggr](https://github.com/aandryashin/ggr) - active load balancer to create scalable and highly-available Selenium cluster.
 * [Selenoid](https://github.com/aandryashin/selenoid) - alternative Selenium Hub running browsers within containers.
 * [RedwoodHQ](https://github.com/dmolchanenko/RedwoodHQ) - RedwoodHQ is a free Open Source test automation framework that allows multiple users to develop automation code, create readable action/keyword driven test cases and execute them all under a single Web interface.
