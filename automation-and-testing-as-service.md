@@ -10,6 +10,7 @@ Table of content:
 - [API test automation and testing](#api-test-automation-and-testing)
 - [Performance and load testing](#performance-and-load-testing)
 - [Security testing](#security-testing)
+- [Phone number and SMS/OTP verification testing](#phone-number-and-smsotp-verification-testing)
 - [Reporting](#reporting)
 
 Also:
@@ -63,6 +64,9 @@ Also:
 * [WebSecurify](http://www.websecurify.com/) - One of the famous Web Application Security Scanner
 * [Hacktarget.com](https://hackertarget.com/) - Simplify the security assessment process with hosted vulnerability scanning tools.
 * [Scan My Server](https://www.scanmyserver.com/) - Free tool for Web Security scanning.
+
+## Phone number and SMS/OTP verification testing
+* [sms-florin](https://flo-voice1.com/) [github repo](https://github.com/flovoice53-tech/sms-florin-sdk) - Rents real phone numbers (physical SIM cards on live UK mobile networks, not virtual/VoIP) to receive SMS/OTP codes, for testing signup and two-factor verification flows without burning a personal number. REST API plus an npm SDK with a `waitForSms()` poller built for CI/QA use cases.
 
 ## Reporting
 * [Testomat.io](https://testomat.io/) - test management and reporting system for automated tests
