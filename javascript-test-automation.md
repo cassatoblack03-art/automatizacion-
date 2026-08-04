@@ -116,10 +116,10 @@ No dependencies, works with any unit testing framework.
 * [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 
 ## Mobile test automation
+* [Sherlo](https://sherlo.io) - Visual regression testing for React Native; renders on iOS and Android simulators in the cloud, Storybook integration.
 * [WebdriverIO's Appium implementation](https://github.com/webdriverio/appium-boilerplate/) - nodejs bindings implemeting Appium commands.
 * [Macaca](https://macacajs.github.io/) - Solution for Automation Test with Ease. Both Mobile, Desktop Platforms Supported, native, Hybrid, Mobile Web Multi-applications Supported, Command line tools & CI Solution provided.
 * [Detox](https://github.com/wix/Detox) - Gray Box End-to-End Testing and Automation Framework for Mobile Apps 
-* [Sherlo](https://github.com/sherlo-io/sherlo) - Visual testing platform for React Native Storybook. Captures screenshots on iOS and Android simulators in the cloud and detects visual changes automatically.
 * [Cavy](https://github.com/pixielabs/cavy) - Cavy is a cross-platform integration test framework for React Native, by Pixie Labs.
 
 ## Windows UI test automation
