@@ -120,6 +120,7 @@ No dependencies, works with any unit testing framework.
 * [Macaca](https://macacajs.github.io/) - Solution for Automation Test with Ease. Both Mobile, Desktop Platforms Supported, native, Hybrid, Mobile Web Multi-applications Supported, Command line tools & CI Solution provided.
 * [Detox](https://github.com/wix/Detox) - Gray Box End-to-End Testing and Automation Framework for Mobile Apps 
 * [Cavy](https://github.com/pixielabs/cavy) - Cavy is a cross-platform integration test framework for React Native, by Pixie Labs.
+* [Sherlo](https://sherlo.io) - Visual regression testing for React Native; renders on iOS and Android simulators in the cloud, Storybook integration.
 
 ## Windows UI test automation
 * [RobotJS](https://robotjs.io/) - The Node.js Desktop Automation Library
