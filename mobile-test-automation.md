@@ -71,6 +71,7 @@ Where to discover new libraries, information, tools, etc.
 
 * [automated-testing.info](http://automated-testing.info) - Test automation community
 * [atinfo.github.io/at.info-knowledge-base](http://atinfo.github.io/at.info-knowledge-base/)  - Knowledge base for test automation examples on different tools and technologies
+* [QAPractices Mobile Testing](https://qapractices.com/topics/mobile-testing/) - Curated hub with mobile testing checklists, test cases and guides for Android and iOS.
 
 # Other Awesome Test Automation Lists
 
