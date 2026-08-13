@@ -22,6 +22,7 @@ Also:
 ---
 
 ## Cross-platform tools
+* [Ghost in the Droid](https://github.com/ghost-in-the-droid/android-agent) - Python MCP server exposing 62 ADB/WebDriverAgent tools for AI-driven Android and iOS test automation. Gives any MCP client (Claude, Cursor, Codex, etc.) programmatic control over real physical devices and emulators. `pip install ghost-in-the-droid`
 * [Appium](http://appium.io/) - An open source test automation framework for use with native, hybrid and mobile web apps. It drives iOS and Android apps using the WebDriver protocol.
     * [Appium Desktop](https://github.com/appium/appium-desktop) - Appium Desktop is an open source app for Mac, Windows, and Linux which gives you the power of the Appium automation server in a beautiful and flexible UI.
 * [Winium.StoreApps](https://github.com/2gis/Winium.StoreApps/) - An open source test automation tool for Windows Store apps, tested on emulators. It is Selenium Remote WebDriver implementation.
