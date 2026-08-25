@@ -105,6 +105,7 @@ No dependencies, works with any unit testing framework.
 * [BackstopJS](https://github.com/garris/BackstopJS) - BackstopJS automates visual regression testing of your responsive web UI by comparing DOM screenshots over time.
 * [Taiko](https://github.com/getgauge/Taiko) - A Node.js library to test and automate chromium browsers.
 * [QA Wolf](https://github.com/qawolf/qawolf) - A Node.js library to create browser tests 10x faster with Puppeteer and Jest.
+* [UI Verify](https://uiverify.ai) - Visual testing for UI written by coding agents. Replays your existing Storybook, Playwright and Vitest tests, screenshots each pull request and uses an AI judge to triage every change as change, regression or flake.
 
 
 ## API automation
