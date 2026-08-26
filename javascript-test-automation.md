@@ -193,7 +193,8 @@ No dependencies, works with any unit testing framework.
 ## Useful libs
 * [faker](https://www.npmjs.com/package/faker) - generate massive amounts of fake data in the browser and node.js
 * [interfake](https://github.com/basicallydan/interfake) -  Fake APIs for prototypes & automated tests.
-* [node-replay](https://github.com/assaf/node-replay) -  When API testing slows you down: record and replay HTTP responses like a boss 
+* [node-replay](https://github.com/assaf/node-replay) -  When API testing slows you down: record and replay HTTP responses like a boss
+* [capmonster-nodejs](https://github.com/CapMonsterCloud/capmonster-nodejs-captcha-solver) - Node.js library for automating CAPTCHA solving (Cloudflare Turnstile, reCAPTCHA, GeeTest, Image) in Puppeteer, Playwright, and Cypress tests.
 
 [Contribute to this section](https://github.com/atinfo/awesome-test-automation/blob/master/CONTRIBUTING.md)
 
