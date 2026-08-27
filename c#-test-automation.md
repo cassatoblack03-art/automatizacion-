@@ -148,6 +148,7 @@ Visual Studio Professional is became free for small teams.
 * [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) is a popular high-performance JSON framework for .NET
 * [RestSharp](https://www.nuget.org/packages/RestSharp/) ― simple REST and HTTP API Client
 * [XMLUnit](http://www.xmlunit.org/) - testing and comparing XML output for Java and .NET
+* [capmonster-dotnet-captcha-solver](https://github.com/CapMonsterCloud/capmonster-dotnet-captcha-solver) - Official .NET SDK for CapMonster Cloud, a captcha solving service supporting Cloudflare Turnstile, reCAPTCHA and other captcha types for automated testing and scraping.
 
 ## DataBase test automation
 * [DBTestCompareGenerator](https://github.com/ObjectivityLtd/DBTestCompareGenerator) - Tool for generating database tests that can be run with [DBTestCompare](https://github.com/ObjectivityLtd/DBTestCompare).
