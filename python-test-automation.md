@@ -321,6 +321,7 @@ Libraries that may help you to build better test automation.
 * [prettyprinter](https://github.com/tommikaikkonen/prettyprinter) - Syntax-highlighting, declarative and composable pretty printer for Python 3.5+
 * [jsonschema](https://github.com/Julian/jsonschema) - JSON Schema implementation
 for Python. Powerful tool for validating the structure of JSON data.
+* [capmonster-python-captcha-solver](https://github.com/CapMonsterCloud/capmonster-python-captcha-solver) - Official Python SDK for CapMonster Cloud, a captcha solving service supporting Cloudflare Turnstile, reCAPTCHA and other captcha types for web scraping and automation.
 
 # Resources
 Where to discover new libraries, information, tools, etc.
