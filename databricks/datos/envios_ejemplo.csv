@@ -1,0 +1,9 @@
+id_envio,transportista,origen,destino,fecha_despacho,fecha_compromiso,fecha_entrega,peso_kg,costo,estado
+ENV-101,TransRápido,Bodega Central,Sucursal Norte,2026-10-01,2026-10-03,2026-10-03,95.5,380.00,ENTREGADO
+ENV-102,LogiExpress,Bodega Central,Sucursal Sur,2026-10-01,2026-10-04,2026-10-05,210.0,640.00,ENTREGADO
+ENV-103,CargaSegura,Bodega Central,Sucursal Este,2026-10-02,2026-10-05,2026-10-05,175.0,560.00,ENTREGADO
+ENV-104,TransRápido,Bodega Central,Sucursal Oeste,2026-10-02,2026-10-05,2026-10-08,60.0,240.00,ENTREGADO
+ENV-105,LogiExpress,Bodega Central,Sucursal Norte,2026-10-03,2026-10-06,2026-10-06,130.0,470.00,ENTREGADO
+ENV-106,CargaSegura,Bodega Central,Sucursal Sur,2026-10-03,2026-10-06,,320.0,820.00,EN_TRANSITO
+ENV-107,TransRápido,Bodega Central,Sucursal Este,2026-10-04,2026-10-07,2026-10-07,45.0,190.00,ENTREGADO
+ENV-108,LogiExpress,Bodega Central,Sucursal Oeste,2026-10-04,2026-10-07,,155.0,530.00,EN_TRANSITO
