@@ -1,0 +1,17 @@
+{
+  "name": "english-training-center-standalone",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Empaqueta EnglishTrainingCenter.jsx en un solo archivo HTML (React desde cdnjs, Tailwind compilado).",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.24.2",
+    "lucide-react": "0.263.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tailwindcss": "3.4.17"
+  }
+}
