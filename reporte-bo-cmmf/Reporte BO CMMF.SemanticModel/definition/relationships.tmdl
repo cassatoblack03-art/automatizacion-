@@ -1,0 +1,4 @@
+relationship fecbde11-3454-5d5f-90d4-be12ede4eab4
+	fromColumn: 'BO Lineas'.'CMMF Viejo'
+	toColumn: 'Productos CMMF'.'CMMF Viejo'
+

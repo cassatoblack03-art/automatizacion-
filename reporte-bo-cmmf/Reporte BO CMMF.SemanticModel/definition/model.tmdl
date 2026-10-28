@@ -1,0 +1,20 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-MX
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["RutaExcel", "BO Lineas", "Productos CMMF", "Medidas", "Puntos Clave"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'BO Lineas'
+ref table 'Productos CMMF'
+ref table Medidas
+ref table 'Puntos Clave'
+
+ref cultureInfo en-US

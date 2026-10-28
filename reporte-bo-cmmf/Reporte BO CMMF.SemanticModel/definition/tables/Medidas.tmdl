@@ -1,0 +1,282 @@
+table Medidas
+	lineageTag: 2c89b4d8-a725-525f-9877-0c1130b28a43
+
+	measure '$ BO' = SUM('BO Lineas'[Monto BO])
+		formatString: $#,0
+		displayFolder: 1. KPIs
+		lineageTag: 1bbf904d-02ea-520a-9462-caf2cf1c1323
+
+	measure 'Piezas BO' = SUM('BO Lineas'[Pzas BO])
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: 6cc78828-c8fb-5ec3-b646-028ba4794fbf
+
+	measure 'Líneas' = COUNTROWS('BO Lineas')
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: b4da9227-e601-5532-953f-3d6bb3add28c
+
+	measure OVs = DISTINCTCOUNT('BO Lineas'[OV])
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: 53f626b8-6f8c-50f1-9964-900600b030aa
+
+	measure Clientes = DISTINCTCOUNT('BO Lineas'[Cliente])
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: c51b5f2d-17cb-5b2a-b280-d8865e623e5c
+
+	measure 'CMMF con BO' = DISTINCTCOUNT('BO Lineas'[CMMF Viejo])
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: cd15b7bf-85e3-5445-a03b-4edbfa06b3bb
+
+	measure 'CMMF en Lista' = COUNTROWS(ALL('Productos CMMF'))
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: 85995cdd-b3e4-512a-b281-403cd9f1ca1f
+
+	measure 'Pzas en Picking Viejo' = SUM('BO Lineas'[Pzas Picking Viejo])
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: ea7d8bce-6540-5a2f-87b1-e042d4236fac
+
+	measure '$ BO OC Vencida' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Estado OC] = "Vencida"))
+		formatString: $#,0
+		displayFolder: 1. KPIs
+		lineageTag: 36070a9a-63f0-5f98-b883-8015b8619a80
+
+	measure '% BO OC Vencida' = DIVIDE([$ BO OC Vencida], [$ BO])
+		formatString: 0.0%
+		displayFolder: 1. KPIs
+		lineageTag: aad3d79b-3dfe-59a1-b41c-31efaa0b69b9
+
+	measure '$ BO OC por Vencer' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Estado OC] = "Vence en 7 días"))
+		formatString: $#,0
+		displayFolder: 1. KPIs
+		lineageTag: f8d59599-534d-5ede-bb33-451b66085033
+
+	measure 'Líneas OC por Vencer' = COALESCE(CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Estado OC] = "Vence en 7 días")), 0)
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: d6e0543f-a827-59f4-b254-74f247508751
+
+	measure '$ Cambio Inmediato' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Accion Orden] IN {1, 2}))
+		formatString: $#,0
+		displayFolder: 1. KPIs
+		lineageTag: 373264fe-0d15-5f79-a124-c9bbd00b8c79
+
+	measure 'Líneas Cambio Inmediato' = COALESCE(CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Accion Orden] IN {1, 2})), 0)
+		formatString: #,0
+		displayFolder: 1. KPIs
+		lineageTag: f0390db3-beb5-5710-b08b-9fa979c23295
+
+	measure '% del BO' = DIVIDE([$ BO], CALCULATE([$ BO], ALLSELECTED('BO Lineas')))
+		formatString: 0.0%
+		displayFolder: 1. KPIs
+		lineageTag: 9e34be6c-a5a4-5205-9e34-2c8e537e2298
+
+	measure 'Días Promedio en BO' = AVERAGE('BO Lineas'[Dias BO])
+		formatString: #,0.0
+		displayFolder: 1. KPIs
+		lineageTag: db567b89-af7f-5c41-b187-c9dff7620e07
+
+	measure 'Fecha Corte' = CALCULATE(MAX('BO Lineas'[Fecha Corte]), REMOVEFILTERS('BO Lineas'))
+		formatString: dd/mm/yyyy
+		displayFolder: 1. KPIs
+		lineageTag: 4752a20e-cd7b-5019-93a5-cff74afaacbc
+
+	measure '$ Acción Cambiar' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Accion Orden] = 1))
+		formatString: $#,0
+		displayFolder: 2. Por acción
+		lineageTag: e03ea8e3-4b41-513c-a0d8-000c70d31d9e
+
+	measure '$ Acción Solo BO' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Accion Orden] = 2))
+		formatString: $#,0
+		displayFolder: 2. Por acción
+		lineageTag: 761940ef-a9ea-5356-8619-ba0cfbc9299e
+
+	measure '$ Acción Revisar' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Accion Orden] = 3))
+		formatString: $#,0
+		displayFolder: 2. Por acción
+		lineageTag: 7f4a51f8-7927-567e-80e8-274fd16fc04a
+
+	measure '$ Acción Confirmar' = CALCULATE([$ BO], KEEPFILTERS('BO Lineas'[Accion Orden] = 4))
+		formatString: $#,0
+		displayFolder: 2. Por acción
+		lineageTag: 85f3fa4e-8099-5dd2-9068-4a733547cebf
+
+	measure 'Líneas Acción Cambiar' = CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Accion Orden] = 1))
+		formatString: #,0
+		displayFolder: 2. Por acción
+		lineageTag: 45940d72-d396-522d-b5b3-af6cfe371bc2
+
+	measure 'Líneas Acción Solo BO' = CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Accion Orden] = 2))
+		formatString: #,0
+		displayFolder: 2. Por acción
+		lineageTag: efec927e-d05f-53f5-b8db-c62c3acebc08
+
+	measure 'Líneas Acción Revisar' = CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Accion Orden] = 3))
+		formatString: #,0
+		displayFolder: 2. Por acción
+		lineageTag: ffe58797-4725-5ab5-96bf-8a6b5baef1ce
+
+	measure 'Líneas Acción Confirmar' = CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Accion Orden] = 4))
+		formatString: #,0
+		displayFolder: 2. Por acción
+		lineageTag: 98c0e0dc-e80a-595f-b075-85e289dc6b8e
+
+	measure 'Texto Fecha Corte' =
+			VAR _f = [Fecha Corte]
+			VAR _meses = "ene|feb|mar|abr|may|jun|jul|ago|sep|oct|nov|dic"
+			RETURN
+			    IF(ISBLANK(_f), "sin datos", FORMAT(DAY(_f), "00") & "-" & PATHITEM(_meses, MONTH(_f)) & "-" & YEAR(_f))
+		displayFolder: 3. Textos
+		lineageTag: fb0e1dfa-78e5-5124-8ce6-293747424c3a
+
+	measure 'Subtítulo Reporte' =
+			"Corte " & [Texto Fecha Corte]
+			    & "   ·   " & FORMAT(COALESCE([Líneas], 0), "#,0") & " líneas"
+			    & "   ·   " & FORMAT(COALESCE([OVs], 0), "#,0") & " OVs"
+			    & "   ·   " & FORMAT(COALESCE([Clientes], 0), "#,0") & " clientes"
+			    & "   ·   " & FORMAT(COALESCE([CMMF con BO], 0), "#,0") & " CMMF viejos"
+		displayFolder: 3. Textos
+		lineageTag: 08af5554-abac-5948-8a4a-40c230be46ff
+
+	measure 'Sub $ BO' = "en " & FORMAT(COALESCE([Líneas], 0), "#,0") & " líneas · " & FORMAT(COALESCE([OVs], 0), "#,0") & " OVs"
+		displayFolder: 3. Textos
+		lineageTag: d489982a-2807-5543-b370-6e8bc5abc184
+
+	measure 'Sub Piezas' = FORMAT(COALESCE([Pzas en Picking Viejo], 0), "#,0") & " pzas ya en picking (no se cambian)"
+		displayFolder: 3. Textos
+		lineageTag: 8d44b2ef-159d-5b1c-9d15-373b9fcb650b
+
+	measure 'Sub Clientes' = FORMAT(COALESCE([CMMF con BO], 0), "#,0") & " de " & FORMAT([CMMF en Lista], "#,0") & " CMMF viejos con BO"
+		displayFolder: 3. Textos
+		lineageTag: ebad3a55-ee53-55eb-83c7-65d47fe05c69
+
+	measure 'Sub OC Vencida' = FORMAT(COALESCE([$ BO OC Vencida], 0), "$#,0") & " por confirmar con el cliente"
+		displayFolder: 3. Textos
+		lineageTag: fa604674-c020-5f18-9ce8-64595e2f6cd1
+
+	measure 'Sub Cambio Inmediato' = FORMAT([Líneas Cambio Inmediato], "#,0") & " líneas listas para cambiar ya"
+		displayFolder: 3. Textos
+		lineageTag: 39af7485-29f7-55f2-8e7a-f7d1431d99ee
+
+	measure 'Sub OC por Vencer' = FORMAT([Líneas OC por Vencer], "#,0") & " líneas vencen en ≤7 días: priorizar"
+		displayFolder: 3. Textos
+		lineageTag: 1b62eeb7-4b1e-5048-ad3b-1b8219ce1f65
+
+	measure 'Sub Acción Cambiar' = FORMAT(COALESCE([Líneas Acción Cambiar], 0), "#,0") & " líneas · " & FORMAT(COALESCE(DIVIDE([$ Acción Cambiar], [$ BO]), 0), "0%") & " del BO"
+		displayFolder: 3. Textos
+		lineageTag: 7594cdfa-804e-542b-a7dd-8e02d4c4cce2
+
+	measure 'Sub Acción Solo BO' = FORMAT(COALESCE([Líneas Acción Solo BO], 0), "#,0") & " líneas · " & FORMAT(COALESCE(DIVIDE([$ Acción Solo BO], [$ BO]), 0), "0%") & " del BO"
+		displayFolder: 3. Textos
+		lineageTag: d4c6b852-dd59-5991-a43c-6cadbedc57ee
+
+	measure 'Sub Acción Revisar' = FORMAT(COALESCE([Líneas Acción Revisar], 0), "#,0") & " líneas · " & FORMAT(COALESCE(DIVIDE([$ Acción Revisar], [$ BO]), 0), "0%") & " del BO"
+		displayFolder: 3. Textos
+		lineageTag: 21cf04b3-de84-5009-a5ff-b9072cbfa824
+
+	measure 'Sub Acción Confirmar' = FORMAT(COALESCE([Líneas Acción Confirmar], 0), "#,0") & " líneas · " & FORMAT(COALESCE(DIVIDE([$ Acción Confirmar], [$ BO]), 0), "0%") & " del BO"
+		displayFolder: 3. Textos
+		lineageTag: 76ca5246-7b55-566a-ae27-b3fd48629561
+
+	measure 'Punto Cliente' =
+			VAR _total = [$ BO]
+			VAR _tabla = ADDCOLUMNS(VALUES('BO Lineas'[Cliente Corto]), "@monto", [$ BO])
+			VAR _top = TOPN(1, _tabla, [@monto], DESC)
+			VAR _cliente = MAXX(_top, 'BO Lineas'[Cliente Corto])
+			VAR _monto = MAXX(_top, [@monto])
+			VAR _vencido = CALCULATE([$ BO OC Vencida], 'BO Lineas'[Cliente Corto] = _cliente)
+			RETURN
+			    _cliente & " concentra el " & FORMAT(DIVIDE(_monto, _total), "0%") & " del BO (" & FORMAT(_monto, "$#,0") & ")"
+			        & IF(_vencido > 0, " y el " & FORMAT(DIVIDE(_vencido, _monto), "0%") & " de ese monto tiene la OC vencida: confirmar con el cliente.", ".")
+		displayFolder: 3. Textos
+		lineageTag: 44963830-60ed-5b84-a189-5037bf19e6b9
+
+	measure 'Punto Producto' =
+			VAR _total = [$ BO]
+			VAR _tabla = ADDCOLUMNS(VALUES('BO Lineas'[CMMF Viejo]), "@monto", [$ BO])
+			VAR _top = TOPN(1, _tabla, [@monto], DESC)
+			VAR _cmmf = MAXX(_top, 'BO Lineas'[CMMF Viejo])
+			VAR _monto = MAXX(_top, [@monto])
+			VAR _producto = CALCULATE(MAX('BO Lineas'[Producto Viejo]), 'BO Lineas'[CMMF Viejo] = _cmmf)
+			VAR _nuevo = CALCULATE(MAX('BO Lineas'[CMMF Nuevo]), 'BO Lineas'[CMMF Viejo] = _cmmf)
+			RETURN
+			    _producto & " (CMMF " & _cmmf & " → " & _nuevo & ") representa el " & FORMAT(DIVIDE(_monto, _total), "0%") & " del BO (" & FORMAT(_monto, "$#,0") & ")."
+		displayFolder: 3. Textos
+		lineageTag: 970575d0-5f91-582b-85b9-5f2f33b427e6
+
+	measure 'Punto Cambio Inmediato' =
+			VAR _l1 = COALESCE([Líneas Acción Cambiar], 0)
+			VAR _m1 = COALESCE([$ Acción Cambiar], 0)
+			VAR _l2 = COALESCE([Líneas Acción Solo BO], 0)
+			VAR _m2 = COALESCE([$ Acción Solo BO], 0)
+			RETURN
+			    FORMAT(_l1, "#,0") & " líneas (" & FORMAT(_m1, "$#,0") & ") se pueden cambiar ya al CMMF nuevo, y "
+			        & FORMAT(_l2, "#,0") & " más (" & FORMAT(_m2, "$#,0") & ") solo en el BO porque el resto ya está en picking."
+		displayFolder: 3. Textos
+		lineageTag: 14c55156-7d8c-510f-a3be-322615a546b4
+
+	measure 'Punto OC Vencida' =
+			VAR _l = COALESCE(CALCULATE([Líneas], KEEPFILTERS('BO Lineas'[Estado OC] = "Vencida")), 0)
+			VAR _m = COALESCE([$ BO OC Vencida], 0)
+			RETURN
+			    IF(_l = 0, "No hay líneas con OC vencida.",
+			        FORMAT(_l, "#,0") & " líneas con OC vencida suman " & FORMAT(_m, "$#,0") & " (" & FORMAT(DIVIDE(_m, [$ BO]), "0%")
+			        & " del BO): confirmar con el cliente si aún quiere el producto antes de cambiar el código.")
+		displayFolder: 3. Textos
+		lineageTag: 0fc875ff-55c3-5247-a5ec-8f04e83e74a9
+
+	measure 'Punto OC por Vencer' =
+			VAR _l = [Líneas OC por Vencer]
+			VAR _m = COALESCE([$ BO OC por Vencer], 0)
+			RETURN
+			    IF(_l = 0, "Ninguna línea tiene OC que venza en los próximos 7 días.",
+			        FORMAT(_l, "#,0") & " líneas (" & FORMAT(_m, "$#,0") & ") tienen OC que vence en los próximos 7 días: priorizar su cambio.")
+		displayFolder: 3. Textos
+		lineageTag: f5eb407c-9280-5676-9508-c4c23b61ea72
+
+	measure 'Punto Revisar' =
+			VAR _l = COALESCE([Líneas Acción Revisar], 0)
+			VAR _m = COALESCE([$ Acción Revisar], 0)
+			RETURN
+			    IF(_l = 0, "Ninguna OV trae ya el CMMF nuevo: no hay riesgo de duplicar cantidades.",
+			        FORMAT(_l, "#,0") & " líneas (" & FORMAT(_m, "$#,0") & ") ya traen el CMMF nuevo en la misma OV: revisar para no duplicar la cantidad.")
+		displayFolder: 3. Textos
+		lineageTag: 5bee668b-468b-513e-b645-2ae48ce5cc81
+
+	measure 'Punto Clave' =
+			VAR _orden = SELECTEDVALUE('Puntos Clave'[Orden])
+			RETURN
+			    IF(ISBLANK([$ BO]), BLANK(),
+			        SWITCH(_orden,
+			            1, [Punto Cliente],
+			            2, [Punto Producto],
+			            3, [Punto Cambio Inmediato],
+			            4, [Punto OC Vencida],
+			            5, [Punto OC por Vencer],
+			            6, [Punto Revisar]))
+		displayFolder: 3. Textos
+		lineageTag: dc3f2441-b392-5687-876e-3a469b946349
+
+	column Medida
+		dataType: string
+		isHidden
+		lineageTag: 192a5327-2bb3-5201-8d78-fdc409784ec4
+		summarizeBy: none
+		sourceColumn: Medida
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Medidas = m
+		mode: import
+		source =
+				let
+				    Origen = #table(type table [Medida = text], {})
+				in
+				    Origen
+
+	annotation PBI_ResultType = Table

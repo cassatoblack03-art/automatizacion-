@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Reporte BO CMMF"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "55a3701a-c3bc-55bf-a431-68bcdbc46510"
+  }
+}

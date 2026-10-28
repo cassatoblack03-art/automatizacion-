@@ -1,0 +1,93 @@
+table 'Productos CMMF'
+	lineageTag: 6c6fbfc1-7fa1-5c10-bd08-3af0b2bcb59b
+
+	column 'CMMF Viejo'
+		dataType: string
+		lineageTag: 89a3c10d-5750-5dda-8702-9551f3bc897c
+		summarizeBy: none
+		sourceColumn: CMMF Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Comercial Viejo'
+		dataType: string
+		lineageTag: c8881cb3-860f-5de2-9f1f-4a427cdcf53e
+		summarizeBy: none
+		sourceColumn: Codigo Comercial Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Producto Viejo'
+		dataType: string
+		lineageTag: c8d55cf1-c10d-583a-b94e-65a3167818bb
+		summarizeBy: none
+		sourceColumn: Producto Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CMMF Nuevo'
+		dataType: string
+		lineageTag: 0b04e768-6d2c-5c11-8398-dcf785152018
+		summarizeBy: none
+		sourceColumn: CMMF Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Comercial Nuevo'
+		dataType: string
+		lineageTag: 3cd9472e-b802-52d9-a3ae-e6f6b064a376
+		summarizeBy: none
+		sourceColumn: Codigo Comercial Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Producto Nuevo'
+		dataType: string
+		lineageTag: dbdbfe49-a487-59e9-b662-49f12a465c23
+		summarizeBy: none
+		sourceColumn: Producto Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cambio CMMF'
+		dataType: string
+		lineageTag: 29cbb595-f634-5599-9ad2-85f42d5246d8
+		summarizeBy: none
+		sourceColumn: Cambio CMMF
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Productos CMMF' = m
+		mode: import
+		source =
+				let
+				    Columnas = {"CMMF VIEJO", "CODIGO COMERCIAL VIEJO", "DESCR VIEJO", "CMMF NUEVO", "CODIGO COMERCIAL NUEVO", "DESCR NUEVO"},
+				    Embebido = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("lZVBj5swEIX/yijnPRhswD66rGlpCUbG0KxWe0ijrLpStJFS9v83EExtQ7T0EqHofXkz84bJ8/MmoBghxDBDm4dN1oYpRU3/WJ3274ffezic3+Gw/3U6wuXYXfaH7u0E7dul+zgD7nUDH1x/Ipj4Xf99m6tGS0ilelRCFNDqzcuDsUsSSgZ5wCI8yAWvn6DWgm8hFYpv8xSKvOCpcUCMEbYOca0YjqKxMkKGzqbqITtfjn86y4KxSWqa0I2ETCpRa7+FJBzrIYFfz5eiEVCpvNR2/fEKvWtC8dh0SPGt6UwoaHkFYldda6pHvuTtk+UUYReai71eGI1HIkYLxOPw3Bdpm6xEZskHJkZ0L8ZFPxL9B+fvADXBxoG3A/yjO4N8fbVXGU1ie5V5/yGzbDa7xAwivBVW24P4mZfO1Hzxzhd7G5DEhoiWwvzOW27/fPSZeBaH2eIouDfWqlFV4USRrGRmZtiA4T3w6/ValLYXXYfMUiHjJOjSeupG/ch1+s0eHVsDzGzMwOlSnrxoYCs0LyyfOFxFzIyoWRyygPnv5qdib8sIG883RXQgbspcydI9NbYJchHXpM1LCaWQXjDXSzO9ionvNJ7bf/8r/UmmrnzUDD3UvLgdzJe/", BinaryEncoding.Base64), Compression.Deflate)), Columnas),
+				    LeerExcel = (ruta as text) as table =>
+				        let
+				            Libro = Excel.Workbook(File.Contents(ruta), null, true),
+				            Hoja = Libro{[Item = "Por CMMF", Kind = "Sheet"]}[Data],
+				            Fila = List.PositionOf(List.Transform(Hoja[Column1], each Text.Upper(Text.Trim(Text.From(_)))), "CMMF VIEJO"),
+				            Datos = Table.PromoteHeaders(Table.Skip(Hoja, Fila), [PromoteAllScalars = true]),
+				            Seleccion = Table.SelectColumns(Datos, Columnas, MissingField.UseNull)
+				        in
+				            Seleccion,
+				    // Si RutaExcel está vacío se usan los datos del corte guardados en el archivo
+				    Origen = if RutaExcel = null or Text.Trim(RutaExcel) = "" then Embebido else LeerExcel(Text.Trim(RutaExcel)),
+				    Filtrado = Table.SelectRows(Origen, each [#"CMMF VIEJO"] <> null and Text.Upper(Text.Trim(Text.From([#"CMMF VIEJO"]))) <> "TOTAL" and Text.Trim(Text.From([#"CMMF VIEJO"])) <> ""),
+				    Renombrado = Table.RenameColumns(Filtrado, {
+				        {"CMMF VIEJO", "CMMF Viejo"}, {"CODIGO COMERCIAL VIEJO", "Codigo Comercial Viejo"}, {"DESCR VIEJO", "Producto Viejo"},
+				        {"CMMF NUEVO", "CMMF Nuevo"}, {"CODIGO COMERCIAL NUEVO", "Codigo Comercial Nuevo"}, {"DESCR NUEVO", "Producto Nuevo"}}),
+				    Tipos = Table.TransformColumnTypes(Renombrado, {
+				        {"CMMF Viejo", type text}, {"Codigo Comercial Viejo", type text}, {"Producto Viejo", type text},
+				        {"CMMF Nuevo", type text}, {"Codigo Comercial Nuevo", type text}, {"Producto Nuevo", type text}}, "en-US"),
+				    Limpio = Table.TransformColumns(Tipos, {
+				        {"CMMF Viejo", Text.Trim, type text}, {"Codigo Comercial Viejo", Text.Trim, type text}, {"Producto Viejo", Text.Trim, type text},
+				        {"CMMF Nuevo", Text.Trim, type text}, {"Codigo Comercial Nuevo", Text.Trim, type text}, {"Producto Nuevo", Text.Trim, type text}}),
+				    SinDuplicados = Table.Distinct(Limpio, {"CMMF Viejo"}),
+				    ConCambio = Table.AddColumn(SinDuplicados, "Cambio CMMF", each
+				        [CMMF Viejo] & " → " & (if [CMMF Nuevo] = null then "" else [CMMF Nuevo]), type text)
+				in
+				    ConCambio
+
+	annotation PBI_ResultType = Table

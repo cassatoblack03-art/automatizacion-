@@ -1,0 +1,524 @@
+table 'BO Lineas'
+	lineageTag: f37661a9-a2be-571d-9ebe-42a7ace3a445
+
+	column Canal
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: 7916b18c-77a5-56b9-a4b6-26a8dee5d311
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Grupo
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: c1c9ce1f-8835-5efe-82dc-072b62ba5496
+		summarizeBy: none
+		sourceColumn: Grupo
+
+		annotation SummarizationSetBy = Automatic
+
+	column MLA
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: 01ff5ce0-67eb-5368-9f92-70685f5079cb
+		summarizeBy: none
+		sourceColumn: MLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nombre MLA'
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: 50fa78a9-712a-51f3-a8dc-88beae87db95
+		summarizeBy: none
+		sourceColumn: Nombre MLA
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: 4dfdfd58-f9c1-505c-bd6e-f75e376bd616
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cliente Corto'
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: 128cc8ba-a886-51d2-8964-da6c34ec0f89
+		summarizeBy: none
+		sourceColumn: Cliente Corto
+
+		annotation SummarizationSetBy = Automatic
+
+	column KAM
+		dataType: string
+		displayFolder: Cliente
+		lineageTag: 44fa2f29-f160-56b7-871d-f27a4fb5966d
+		summarizeBy: none
+		sourceColumn: KAM
+
+		annotation SummarizationSetBy = Automatic
+
+	column OV
+		dataType: string
+		displayFolder: Pedido
+		lineageTag: 25e2cf55-af90-5a98-b5d2-7957cdc7427b
+		summarizeBy: none
+		sourceColumn: OV
+
+		annotation SummarizationSetBy = Automatic
+
+	column OC
+		dataType: string
+		displayFolder: Pedido
+		lineageTag: b310ba2b-c769-5208-a6fa-51b0f83591a7
+		summarizeBy: none
+		sourceColumn: OC
+
+		annotation SummarizationSetBy = Automatic
+
+	column Linea
+		dataType: int64
+		formatString: 0
+		displayFolder: Pedido
+		lineageTag: 230b3b2a-159c-5679-b2fd-1059a9248de9
+		summarizeBy: none
+		sourceColumn: Linea
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linea ID'
+		dataType: string
+		isHidden
+		displayFolder: Pedido
+		lineageTag: de3b67a8-69db-55fc-9d49-cb2cc87194e1
+		summarizeBy: none
+		sourceColumn: Linea ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Pedido'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		displayFolder: Pedido
+		lineageTag: 193a02e4-221d-523b-b5a5-283a455f8352
+		summarizeBy: none
+		sourceColumn: Fecha Pedido
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dias BO'
+		dataType: int64
+		formatString: 0
+		displayFolder: Pedido
+		lineageTag: 27c1f481-9756-51d1-9123-7e86c75845ae
+		summarizeBy: none
+		sourceColumn: Dias BO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Antiguedad BO'
+		dataType: string
+		displayFolder: Pedido
+		lineageTag: 17ccfcd9-7e29-5019-b000-931162d9e563
+		summarizeBy: none
+		sourceColumn: Antiguedad BO
+		sortByColumn: 'Antiguedad Orden'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Antiguedad Orden'
+		dataType: int64
+		formatString: 0
+		isHidden
+		displayFolder: Pedido
+		lineageTag: 96b34b25-809f-53c8-bd69-caa8c3bf4ca9
+		summarizeBy: none
+		sourceColumn: Antiguedad Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Cancelacion OC'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		displayFolder: Pedido
+		lineageTag: 8331a07e-5fc8-5939-bbd3-42c4486730c0
+		summarizeBy: none
+		sourceColumn: Fecha Cancelacion OC
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Dias Para Cancelar OC'
+		dataType: int64
+		formatString: 0
+		displayFolder: Pedido
+		lineageTag: 7a711865-2e60-527c-bdc6-9eae02d67322
+		summarizeBy: none
+		sourceColumn: Dias Para Cancelar OC
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado OC'
+		dataType: string
+		displayFolder: Pedido
+		lineageTag: 7d1ddf51-49a7-5774-bb1f-fcffc504985a
+		summarizeBy: none
+		sourceColumn: Estado OC
+		sortByColumn: 'Estado OC Orden'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado OC Orden'
+		dataType: int64
+		formatString: 0
+		isHidden
+		displayFolder: Pedido
+		lineageTag: a339f994-2ae3-539f-b102-6815ac781861
+		summarizeBy: none
+		sourceColumn: Estado OC Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estado OC Origen'
+		dataType: string
+		isHidden
+		displayFolder: Pedido
+		lineageTag: 2628672e-a018-54d8-b654-a49038de18d6
+		summarizeBy: none
+		sourceColumn: Estado OC Origen
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fecha Corte'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		isHidden
+		displayFolder: Pedido
+		lineageTag: cbb4c0bd-c6e9-50e7-9c3b-cbd5362083fd
+		summarizeBy: none
+		sourceColumn: Fecha Corte
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'CMMF Viejo'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: ffffc2c2-2165-56c4-b242-8688e8cb2b6f
+		summarizeBy: none
+		sourceColumn: CMMF Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Comercial Viejo'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: 0386d6f7-2814-5196-b8c1-e24c8f082826
+		summarizeBy: none
+		sourceColumn: Codigo Comercial Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Producto Viejo'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: 60eba775-4bc2-5f28-a41b-a024d5cb7bb9
+		summarizeBy: none
+		sourceColumn: Producto Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'CMMF Nuevo'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: 2965d5f1-a84b-5dc4-a104-f3044e3f8e1f
+		summarizeBy: none
+		sourceColumn: CMMF Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Comercial Nuevo'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: 69fb6d56-d833-5897-9350-3ce3ffe9191b
+		summarizeBy: none
+		sourceColumn: Codigo Comercial Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Producto Nuevo'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: 7e3c4c33-c2f4-52fc-a025-3a994cebe2b0
+		summarizeBy: none
+		sourceColumn: Producto Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cambio CMMF'
+		dataType: string
+		displayFolder: Producto
+		lineageTag: 744a6fcd-18de-5f70-b885-19c693eb3a56
+		summarizeBy: none
+		sourceColumn: Cambio CMMF
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pzas BO'
+		dataType: int64
+		formatString: #,0
+		displayFolder: Cantidades
+		lineageTag: ba103d55-98ec-54f7-bb3f-e7ad171de0ec
+		summarizeBy: sum
+		sourceColumn: Pzas BO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Precio Neto'
+		dataType: double
+		formatString: $#,0.00
+		displayFolder: Cantidades
+		lineageTag: ff91c831-a9d3-5eb6-8edf-17bf21b794fb
+		summarizeBy: none
+		sourceColumn: Precio Neto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monto BO'
+		dataType: double
+		formatString: $#,0
+		displayFolder: Cantidades
+		lineageTag: c84a9e3c-e967-5e45-813c-3236023d2963
+		summarizeBy: sum
+		sourceColumn: Monto BO
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pzas Picking Viejo'
+		dataType: int64
+		formatString: #,0
+		displayFolder: Cantidades
+		lineageTag: 5a1cc3e2-6be3-5582-90f7-9c5f7f482893
+		summarizeBy: sum
+		sourceColumn: Pzas Picking Viejo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pzas BO Nuevo En OV'
+		dataType: int64
+		formatString: #,0
+		displayFolder: Cantidades
+		lineageTag: 2c3c9745-ff85-5076-842d-fce8253befd5
+		summarizeBy: sum
+		sourceColumn: Pzas BO Nuevo En OV
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cuenta Como'
+		dataType: string
+		displayFolder: Acción
+		lineageTag: 357bb1d8-b790-53eb-9460-394ca4c3faaf
+		summarizeBy: none
+		sourceColumn: Cuenta Como
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Picking ID'
+		dataType: string
+		displayFolder: Acción
+		lineageTag: 17e9bc73-ce71-5cd6-b4d4-db330ed5c82a
+		summarizeBy: none
+		sourceColumn: Picking ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OV Ya Trae Nuevo'
+		dataType: string
+		displayFolder: Acción
+		lineageTag: 5bca06f5-5140-540e-bd19-e7c942f2c956
+		summarizeBy: none
+		sourceColumn: OV Ya Trae Nuevo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Que Hacer'
+		dataType: string
+		displayFolder: Acción
+		lineageTag: 7d81756c-2f17-5184-9aef-3e6af9e53649
+		summarizeBy: none
+		sourceColumn: Que Hacer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Accion
+		dataType: string
+		displayFolder: Acción
+		lineageTag: a5a4b627-633e-5282-a44f-13f21337f2ec
+		summarizeBy: none
+		sourceColumn: Accion
+		sortByColumn: 'Accion Orden'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Accion Orden'
+		dataType: int64
+		formatString: 0
+		isHidden
+		displayFolder: Acción
+		lineageTag: 3d37750f-6d89-5013-86b8-01eaaec423d1
+		summarizeBy: none
+		sourceColumn: Accion Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'BO Lineas' = m
+		mode: import
+		source =
+				let
+				    Columnas = {"CANAL", "GRUPO", "MLA", "NOMBRE MLA", "CODIGO 3A", "KAM", "OV", "OC", "LINEA", "FECHA PEDIDO", "DIAS", "FECHA CANCELACION OC", "ESTADO OC", "CMMF VIEJO", "CODIGO COMERCIAL VIEJO", "DESCR VIEJO", "PZAS BO", "PRECIO NETO", "$ BO", "CUENTA COMO", "PZAS PICKING VIEJO", "PICKING ID", "CMMF NUEVO", "CODIGO COMERCIAL NUEVO", "DESCR NUEVO", "OV YA TRAE EL NUEVO", "PZAS BO DEL NUEVO EN LA OV", "QUE HACER"},
+				    Embebido = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("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", BinaryEncoding.Base64), Compression.Deflate)), Columnas),
+				    LeerExcel = (ruta as text) as table =>
+				        let
+				            Libro = Excel.Workbook(File.Contents(ruta), null, true),
+				            Hoja = Libro{[Item = "Por linea SAP", Kind = "Sheet"]}[Data],
+				            Fila = List.PositionOf(List.Transform(Hoja[Column1], each Text.Upper(Text.Trim(Text.From(_)))), "CANAL"),
+				            Datos = Table.PromoteHeaders(Table.Skip(Hoja, Fila), [PromoteAllScalars = true]),
+				            Seleccion = Table.SelectColumns(Datos, Columnas, MissingField.UseNull)
+				        in
+				            Seleccion,
+				    // Si RutaExcel está vacío se usan los datos del corte guardados en el archivo
+				    Origen = if RutaExcel = null or Text.Trim(RutaExcel) = "" then Embebido else LeerExcel(Text.Trim(RutaExcel)),
+				    SoloLineas = Table.SelectRows(Origen, each [CANAL] <> null and Text.Upper(Text.Trim(Text.From([CANAL]))) <> "TOTAL" and [#"$ BO"] <> null),
+				    Renombrado = Table.RenameColumns(SoloLineas, {
+				        {"CANAL", "Canal"},
+				        {"GRUPO", "Grupo"},
+				        {"NOMBRE MLA", "Nombre MLA"},
+				        {"CODIGO 3A", "Cliente"},
+				        {"LINEA", "Linea"},
+				        {"FECHA PEDIDO", "Fecha Pedido"},
+				        {"DIAS", "Dias BO"},
+				        {"FECHA CANCELACION OC", "Fecha Cancelacion OC"},
+				        {"ESTADO OC", "Estado OC Origen"},
+				        {"CMMF VIEJO", "CMMF Viejo"},
+				        {"CODIGO COMERCIAL VIEJO", "Codigo Comercial Viejo"},
+				        {"DESCR VIEJO", "Producto Viejo"},
+				        {"PZAS BO", "Pzas BO"},
+				        {"PRECIO NETO", "Precio Neto"},
+				        {"$ BO", "Monto BO"},
+				        {"CUENTA COMO", "Cuenta Como"},
+				        {"PZAS PICKING VIEJO", "Pzas Picking Viejo"},
+				        {"PICKING ID", "Picking ID"},
+				        {"CMMF NUEVO", "CMMF Nuevo"},
+				        {"CODIGO COMERCIAL NUEVO", "Codigo Comercial Nuevo"},
+				        {"DESCR NUEVO", "Producto Nuevo"},
+				        {"OV YA TRAE EL NUEVO", "OV Ya Trae Nuevo"},
+				        {"PZAS BO DEL NUEVO EN LA OV", "Pzas BO Nuevo En OV"},
+				        {"QUE HACER", "Que Hacer"}}),
+				    Tipos = Table.TransformColumnTypes(Renombrado, {
+				        {"Canal", type text},
+				        {"Grupo", type text},
+				        {"MLA", type text},
+				        {"Nombre MLA", type text},
+				        {"Cliente", type text},
+				        {"KAM", type text},
+				        {"OV", type text},
+				        {"OC", type text},
+				        {"Linea", Int64.Type},
+				        {"Fecha Pedido", type date},
+				        {"Dias BO", Int64.Type},
+				        {"Fecha Cancelacion OC", type date},
+				        {"Estado OC Origen", type text},
+				        {"CMMF Viejo", type text},
+				        {"Codigo Comercial Viejo", type text},
+				        {"Producto Viejo", type text},
+				        {"CMMF Nuevo", type text},
+				        {"Codigo Comercial Nuevo", type text},
+				        {"Producto Nuevo", type text},
+				        {"Pzas BO", Int64.Type},
+				        {"Precio Neto", type number},
+				        {"Monto BO", type number},
+				        {"Pzas Picking Viejo", Int64.Type},
+				        {"Pzas BO Nuevo En OV", Int64.Type},
+				        {"Cuenta Como", type text},
+				        {"Picking ID", type text},
+				        {"OV Ya Trae Nuevo", type text},
+				        {"Que Hacer", type text}}, "en-US"),
+				    Limpio = Table.TransformColumns(Tipos, {
+				        {"Canal", Text.Trim, type text},
+				        {"Grupo", Text.Trim, type text},
+				        {"MLA", Text.Trim, type text},
+				        {"Nombre MLA", Text.Trim, type text},
+				        {"Cliente", Text.Trim, type text},
+				        {"KAM", Text.Trim, type text},
+				        {"OV", Text.Trim, type text},
+				        {"OC", Text.Trim, type text},
+				        {"Estado OC Origen", Text.Trim, type text},
+				        {"CMMF Viejo", Text.Trim, type text},
+				        {"Codigo Comercial Viejo", Text.Trim, type text},
+				        {"Producto Viejo", Text.Trim, type text},
+				        {"CMMF Nuevo", Text.Trim, type text},
+				        {"Codigo Comercial Nuevo", Text.Trim, type text},
+				        {"Producto Nuevo", Text.Trim, type text},
+				        {"Cuenta Como", Text.Trim, type text},
+				        {"Picking ID", Text.Trim, type text},
+				        {"OV Ya Trae Nuevo", Text.Trim, type text},
+				        {"Que Hacer", Text.Trim, type text}}),
+				    ConKam = Table.TransformColumns(Limpio, {{"KAM", each if _ = null or _ = "" then "SIN KAM ASIGNADO" else _, type text}}),
+				    ConClienteCorto = Table.AddColumn(ConKam, "Cliente Corto", each
+				        if [Cliente] = null then "SIN CLIENTE"
+				        else let p = Text.PositionOf([Cliente], "·") in if p >= 0 then Text.Trim(Text.Middle([Cliente], p + 1)) else [Cliente], type text),
+				    ConLineaId = Table.AddColumn(ConClienteCorto, "Linea ID", each Text.From([OV]) & "-" & Text.From([Linea]), type text),
+				    ConCorte = Table.AddColumn(ConLineaId, "Fecha Corte", each
+				        if [Fecha Pedido] = null or [Dias BO] = null then null else Date.AddDays([Fecha Pedido], [Dias BO]), type date),
+				    ConDiasCancelar = Table.AddColumn(ConCorte, "Dias Para Cancelar OC", each
+				        if [Fecha Cancelacion OC] = null or [Fecha Corte] = null then null else Duration.Days([Fecha Cancelacion OC] - [Fecha Corte]), Int64.Type),
+				    ConEstado = Table.AddColumn(ConDiasCancelar, "Estado OC", each
+				        let e = if [Estado OC Origen] = null then "" else Text.Upper([Estado OC Origen]) in
+				        if e = "VENCIDA" then "Vencida"
+				        else if Text.StartsWith(e, "VENCE") then "Vence en 7 días"
+				        else if e = "VIGENTE" then "Vigente"
+				        else "Sin estado", type text),
+				    ConEstadoOrden = Table.AddColumn(ConEstado, "Estado OC Orden", each
+				        if [Estado OC] = "Vencida" then 1 else if [Estado OC] = "Vence en 7 días" then 2 else if [Estado OC] = "Vigente" then 3 else 9, Int64.Type),
+				    ConAccion = Table.AddColumn(ConEstadoOrden, "Accion", each
+				        let a = if [Que Hacer] = null then "" else Text.Upper([Que Hacer]) in
+				        if Text.StartsWith(a, "CAMBIAR AL CMMF NUEVO") then "Cambiar al CMMF nuevo"
+				        else if Text.StartsWith(a, "CAMBIAR SOLO EL BO") then "Cambiar solo el BO"
+				        else if Text.StartsWith(a, "REVISAR") then "Revisar: OV ya trae el nuevo"
+				        else if Text.StartsWith(a, "CONFIRMAR") then "Confirmar con cliente"
+				        else "Otra acción", type text),
+				    ConAccionOrden = Table.AddColumn(ConAccion, "Accion Orden", each
+				        if [Accion] = "Cambiar al CMMF nuevo" then 1
+				        else if [Accion] = "Cambiar solo el BO" then 2
+				        else if [Accion] = "Revisar: OV ya trae el nuevo" then 3
+				        else if [Accion] = "Confirmar con cliente" then 4
+				        else 9, Int64.Type),
+				    ConAntiguedad = Table.AddColumn(ConAccionOrden, "Antiguedad BO", each
+				        if [Dias BO] = null then "Sin dato"
+				        else if [Dias BO] <= 7 then "0-7 días"
+				        else if [Dias BO] <= 15 then "8-15 días"
+				        else if [Dias BO] <= 30 then "16-30 días"
+				        else "Más de 30 días", type text),
+				    ConAntiguedadOrden = Table.AddColumn(ConAntiguedad, "Antiguedad Orden", each
+				        if [Dias BO] = null then 9
+				        else if [Dias BO] <= 7 then 1
+				        else if [Dias BO] <= 15 then 2
+				        else if [Dias BO] <= 30 then 3
+				        else 4, Int64.Type),
+				    ConCambio = Table.AddColumn(ConAntiguedadOrden, "Cambio CMMF", each
+				        (if [CMMF Viejo] = null then "" else [CMMF Viejo]) & " → " & (if [CMMF Nuevo] = null then "" else [CMMF Nuevo]), type text),
+				    Resultado = Table.SelectColumns(ConCambio, {"Canal", "Grupo", "MLA", "Nombre MLA", "Cliente", "Cliente Corto", "KAM", "OV", "OC", "Linea", "Linea ID", "Fecha Pedido", "Dias BO", "Antiguedad BO", "Antiguedad Orden", "Fecha Cancelacion OC", "Dias Para Cancelar OC", "Estado OC", "Estado OC Orden", "Estado OC Origen", "Fecha Corte", "CMMF Viejo", "Codigo Comercial Viejo", "Producto Viejo", "CMMF Nuevo", "Codigo Comercial Nuevo", "Producto Nuevo", "Cambio CMMF", "Pzas BO", "Precio Neto", "Monto BO", "Pzas Picking Viejo", "Pzas BO Nuevo En OV", "Cuenta Como", "Picking ID", "OV Ya Trae Nuevo", "Que Hacer", "Accion", "Accion Orden"})
+				in
+				    Resultado
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,31 @@
+table 'Puntos Clave'
+	lineageTag: afeada1b-b72b-5789-8bb4-a780c0307852
+
+	column Orden
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: a3cc2231-d2d3-5874-953b-ef002e508cb0
+		summarizeBy: none
+		sourceColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tema
+		dataType: string
+		lineageTag: 0f25fcd5-b886-5246-b6d4-67d939bca8dc
+		summarizeBy: none
+		sourceColumn: Tema
+		sortByColumn: Orden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Puntos Clave' = m
+		mode: import
+		source =
+				let
+				    Origen = #table(type table [Orden = Int64.Type, Tema = text], {{1, "Cliente principal"}, {2, "Producto principal"}, {3, "Cambio inmediato"}, {4, "OC vencida"}, {5, "OC por vencer"}, {6, "Revisar duplicados"}})
+				in
+				    Origen
+
+	annotation PBI_ResultType = Table

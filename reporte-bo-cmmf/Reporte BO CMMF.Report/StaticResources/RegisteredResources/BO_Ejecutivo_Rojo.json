@@ -1,0 +1,77 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/powerbi-desktop-samples/main/Report%20Theme%20JSON%20Schema/reportThemeSchema-2.140.json",
+  "name": "BO_Ejecutivo_Rojo.json",
+  "dataColors": [
+    "#B30000",
+    "#7D0000",
+    "#E06666",
+    "#6C757D",
+    "#ADB5BD",
+    "#F4B6B6",
+    "#495057",
+    "#D98C8C",
+    "#343A40",
+    "#CED4DA",
+    "#9E2A2A",
+    "#E9ECEF"
+  ],
+  "foreground": "#212529",
+  "foregroundNeutralSecondary": "#6C757D",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F8F9FA",
+  "tableAccent": "#B30000",
+  "good": "#6C757D",
+  "neutral": "#ADB5BD",
+  "bad": "#B30000",
+  "maximum": "#B30000",
+  "center": "#F4B6B6",
+  "minimum": "#FDEAEA",
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 22,
+      "color": "#B30000"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#212529"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#212529"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 9,
+      "color": "#6C757D"
+    }
+  },
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F8F9FA"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F8F9FA"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

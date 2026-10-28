@@ -1,0 +1,7 @@
+expression RutaExcel = "" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=false]
+	lineageTag: 2d99416d-517f-5cfa-9f7a-71488f5eacf9
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
