@@ -1,0 +1,9 @@
+# Tus facturas, tu Excel de control y los reportes NO se suben a GitHub
+xml_entrada/*
+mi_excel/*
+reportes/*
+!*/.gitkeep
+
+__pycache__/
+*.pyc
+~$*

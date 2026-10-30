@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:pago20="http://www.sat.gob.mx/Pagos20" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd http://www.sat.gob.mx/Pagos20 http://www.sat.gob.mx/sitio_internet/cfd/Pagos/Pagos20.xsd" Version="4.0" Serie="P" Folio="20" Fecha="2026-10-20T10:00:00" NoCertificado="30001000000500003416" SubTotal="0" Moneda="XXX" Total="0" TipoDeComprobante="P" Exportacion="01" LugarExpedicion="42501" Sello="EJEMPLO" Certificado="EJEMPLO">
+  <cfdi:Emisor Rfc="EKU9003173C9" Nombre="ESCUELA KEMPER URGATE" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="URE180429TM6" Nombre="UNIVERSIDAD ROBOTICA ESPAÑOLA" DomicilioFiscalReceptor="65000" RegimenFiscalReceptor="601" UsoCFDI="CP01"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="ACT" Descripcion="Pago" ValorUnitario="0" Importe="0" ObjetoImp="01"/>
+  </cfdi:Conceptos>
+  <cfdi:Complemento>
+    <pago20:Pagos Version="2.0">
+      <pago20:Totales TotalRetencionesIVA="1066.67" TotalRetencionesISR="1000.00" TotalTrasladosBaseIVA16="10000.00" TotalTrasladosImpuestoIVA16="1600.00" MontoTotalPagos="9533.33"/>
+      <pago20:Pago FechaPago="2026-10-19T12:00:00" FormaDePagoP="03" MonedaP="MXN" TipoCambioP="1" Monto="9533.33">
+        <pago20:DoctoRelacionado IdDocumento="A2B3C4D5-E6F7-4890-ABCD-EF0123456789" Serie="A" Folio="1002" MonedaDR="MXN" EquivalenciaDR="1" NumParcialidad="1" ImpSaldoAnt="9533.33" ImpPagado="9533.33" ImpSaldoInsoluto="0.00" ObjetoImpDR="02"/>
+      </pago20:Pago>
+    </pago20:Pagos>
+    <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="1.1" UUID="9F8E7D6C-5B4A-4321-8FED-CBA987654321" FechaTimbrado="2026-10-20T10:01:00" RfcProvCertif="SAT970701NN3" SelloCFD="EJEMPLO" NoCertificadoSAT="30001000000500003456" SelloSAT="EJEMPLO"/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

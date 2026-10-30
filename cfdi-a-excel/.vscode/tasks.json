@@ -1,0 +1,58 @@
+{
+  // Tareas de VS Code. Ejecútalas con Ctrl+Shift+B (la principal)
+  // o desde el menú Terminal > Ejecutar tarea...
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "CFDI: Procesar XML y comparar con mi Excel",
+      "type": "shell",
+      "command": "python3",
+      "windows": { "command": "py" },
+      "args": ["cfdi_a_excel.py", "--abrir"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CFDI: Solo pasar XML a Excel (sin comparar)",
+      "type": "shell",
+      "command": "python3",
+      "windows": { "command": "py" },
+      "args": ["cfdi_a_excel.py", "--no-comparar", "--abrir"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CFDI: Probar con los ejemplos",
+      "type": "shell",
+      "command": "python3",
+      "windows": { "command": "py" },
+      "args": ["cfdi_a_excel.py", "ejemplos/xml", "--comparar", "ejemplos/control_ejemplo.xlsx", "--abrir"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CFDI: Instalar lo necesario (solo la primera vez)",
+      "type": "shell",
+      "command": "python3",
+      "windows": { "command": "py" },
+      "args": ["-m", "pip", "install", "-r", "requirements.txt"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "CFDI: Correr pruebas",
+      "type": "shell",
+      "command": "python3",
+      "windows": { "command": "py" },
+      "args": ["-m", "unittest", "discover", "-s", "tests", "-v"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
