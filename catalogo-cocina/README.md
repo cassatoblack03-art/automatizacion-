@@ -7,13 +7,15 @@ Catálogo para clientes y lista de precios interna, armados a partir de las capt
 | Archivo | Para qué sirve |
 |---|---|
 | `salida/catalogo_cocina.pdf` | Catálogo completo para clientes (A4). **No muestra costos.** |
-| `salida/catalogo_sartenes.png` | Imagen de sartenes y juegos de sartenes, para WhatsApp o estados. |
-| `salida/catalogo_ollas_y_baterias.png` | Imagen de ollas, cazos y baterías. |
-| `salida/catalogo_licuadoras_y_mas.png` | Imagen de licuadoras, batidoras y exprimidores. |
+| `salida/catalogo_sartenes_*.png` | Imágenes de sartenes y juegos de sartenes, para WhatsApp o estados. |
+| `salida/catalogo_ollas_y_baterias_*.png` | Imágenes de ollas, cazos y baterías. |
+| `salida/catalogo_licuadoras_y_mas_*.png` | Imágenes de licuadoras, batidoras y exprimidores. |
 | `salida/catalogo_cocina.html` | Versión web del catálogo completo. |
 | `salida/precios_internos_cocina.xlsx` | **Solo para ti**: costo, % de aumento, precio de venta, ganancia y margen, con fórmulas. Hojas: Precios, Resumen (por pestaña), Reglas, Pendientes. |
 | `productos.csv` | Lista de productos y costos (aquí se agregan productos nuevos). |
 | `generar_catalogo.py` | Vuelve a generar todo a partir del CSV. |
+
+Las imágenes traen máximo 15 productos cada una (si hay más se parten en _1, _2, ...) para que se lean bien en el celular.
 
 ## Cómo se calculó el precio de venta
 

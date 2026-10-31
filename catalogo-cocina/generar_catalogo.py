@@ -45,14 +45,16 @@ REGLAS = [
 # Orden de las pestañas de la app en el Excel (hoja Resumen).
 PESTANAS = ["CW & BW", "Food Prep"]
 
-# Imágenes PNG para WhatsApp (cortas, para que se lean bien en el celular):
-# (título, categorías que incluye, archivo)
+# Imágenes PNG para WhatsApp: (título, categorías que incluye, nombre base del archivo)
+# Si un grupo tiene más de MAX_POR_IMAGEN productos se parte en varias imágenes
+# (catalogo_sartenes_1.png, _2.png, ...) para que se lean bien en el celular.
+MAX_POR_IMAGEN = 15
 IMAGENES = [
-    ("Sartenes y juegos de sartenes", ["Sartenes", "Juegos de sartenes"], "catalogo_sartenes.png"),
-    ("Ollas, cazos y baterías", ["Ollas y cazos", "Baterías de cocina"], "catalogo_ollas_y_baterias.png"),
+    ("Sartenes y juegos de sartenes", ["Sartenes", "Juegos de sartenes"], "catalogo_sartenes"),
+    ("Ollas, cazos y baterías", ["Ollas y cazos", "Baterías de cocina"], "catalogo_ollas_y_baterias"),
     ("Licuadoras, batidoras y exprimidores",
      ["Licuadoras", "Licuadoras de alto rendimiento", "Licuadoras personales", "Batidoras de inmersión",
-      "Procesadores y picadores", "Exprimidores y extractores"], "catalogo_licuadoras_y_mas.png"),
+      "Procesadores y picadores", "Exprimidores y extractores"], "catalogo_licuadoras_y_mas"),
 ]
 
 ORDEN_CATEGORIAS = [
@@ -455,14 +457,24 @@ def main():
     html_path.write_text(generar_html(productos, SUBTITULO), encoding="utf-8")
     trabajos = [{"html": str(html_path), "pdf": str(SALIDA / PDF_COMPLETO)}]
 
+    for viejo in SALIDA.glob("*.png"):  # quitar imágenes de corridas anteriores
+        viejo.unlink()
+
     with tempfile.TemporaryDirectory() as tmp:
-        for titulo_img, categorias, png in IMAGENES:
-            de_imagen = [p for p in productos if p["categoria"] in categorias]
-            if not de_imagen:
+        for titulo_img, categorias, base in IMAGENES:
+            de_grupo = [p for p in productos if p["categoria"] in categorias]
+            if not de_grupo:
                 continue
-            h = Path(tmp) / f"{png}.html"
-            h.write_text(generar_html(de_imagen, titulo_img), encoding="utf-8")
-            trabajos.append({"html": str(h), "png": str(SALIDA / png)})
+            # Partes de tamaño parecido (ej. 34 productos -> 12, 12, 10 en vez de 15, 15, 4)
+            n_partes = math.ceil(len(de_grupo) / MAX_POR_IMAGEN)
+            tam = math.ceil(len(de_grupo) / n_partes)
+            for i in range(n_partes):
+                parte = de_grupo[i * tam:(i + 1) * tam]
+                sufijo = f"_{i + 1}" if n_partes > 1 else ""
+                titulo = f"{titulo_img} · {i + 1} de {n_partes}" if n_partes > 1 else titulo_img
+                h = Path(tmp) / f"{base}{sufijo}.html"
+                h.write_text(generar_html(parte, titulo), encoding="utf-8")
+                trabajos.append({"html": str(h), "png": str(SALIDA / f"{base}{sufijo}.png")})
         exportar_con_navegador(trabajos)
 
     generar_excel(productos, pendientes, SALIDA / EXCEL)
