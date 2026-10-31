@@ -1,5 +1,7 @@
 # Awesome Test Automation
 
+> 📈 **Programa de formación en trading (en español):** ver [`trading/`](trading/README.md).
+
 A curated list of awesome test automation frameworks, tools, libraries, and software for different programming languages to help software engineers easily bootstrap test automation upon necessity. Sponsored by https://testomat.io, https://zapple.tech and https://automated-testing.info
 
 [![Have questions\issues\problems, join the chat at https://gitter.im/atinfo/awesome-test-automation](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/atinfo/awesome-test-automation)
