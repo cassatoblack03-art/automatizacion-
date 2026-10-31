@@ -51,7 +51,8 @@ PESTANAS = ["CW & BW", "Food Prep"]
 MAX_POR_IMAGEN = 15
 IMAGENES = [
     ("Sartenes y juegos de sartenes", ["Sartenes", "Juegos de sartenes"], "catalogo_sartenes"),
-    ("Ollas, cazos y baterías", ["Ollas y cazos", "Baterías de cocina"], "catalogo_ollas_y_baterias"),
+    ("Ollas, cazos, baterías y accesorios", ["Ollas y cazos", "Baterías de cocina", "Accesorios"],
+     "catalogo_ollas_y_baterias"),
     ("Licuadoras, batidoras y exprimidores",
      ["Licuadoras", "Licuadoras de alto rendimiento", "Licuadoras personales", "Batidoras de inmersión",
       "Procesadores y picadores", "Exprimidores y extractores"], "catalogo_licuadoras_y_mas"),
@@ -63,6 +64,7 @@ ORDEN_CATEGORIAS = [
     "Juegos de sartenes",
     "Ollas y cazos",
     "Baterías de cocina",
+    "Accesorios",
     # Food Prep
     "Licuadoras",
     "Licuadoras de alto rendimiento",
@@ -132,6 +134,19 @@ def cargar_productos():
             manual = float(manual_txt) if manual_txt else None
             listos.append({**fila, "nombre_catalogo": nombre, "costo": costo,
                            "manual": manual, "precio": calcular_precio(costo, manual)})
+
+    # Mismo nombre de catálogo = mismo producto para el cliente (la app a veces trae 2 claves
+    # para lo mismo). Se queda el más barato para ti; los demás van a "Pendientes" como repetidos.
+    por_nombre = {}
+    for p in listos:
+        por_nombre.setdefault(p["nombre_catalogo"].lower(), []).append(p)
+    listos = []
+    for grupo in por_nombre.values():
+        grupo.sort(key=lambda p: p["costo"])
+        listos.append(grupo[0])
+        for rep in grupo[1:]:
+            pendientes.append({**rep, "costo": f"{rep['costo']:.2f}",
+                               "_repetido_de": f"{grupo[0]['nombre_app']} (${grupo[0]['costo']:,.2f})"})
 
     def clave(p):
         cat = p["categoria"]
@@ -426,7 +441,7 @@ def generar_excel(productos, pendientes, ruta: Path):
 
     # ---- Hoja Pendientes ----
     pend = wb.create_sheet("Pendientes")
-    pend["A1"] = "Productos con datos incompletos (no salen en el catálogo)"
+    pend["A1"] = "Productos con datos incompletos o repetidos (no salen en el catálogo)"
     pend["A1"].font = TITULO_F
     encabezado(pend, 3, ["Pestaña app", "Producto (app)", "Costo visto (MXN)", "Qué falta"], alto=20)
     for i, f in enumerate(pendientes):
@@ -435,7 +450,13 @@ def generar_excel(productos, pendientes, ruta: Path):
         celda(pend, r, 1, f.get("pestana_app"))
         celda(pend, r, 2, f.get("nombre_app"))
         celda(pend, r, 3, float(costo) if costo else None, AZUL, MONEDA)
-        celda(pend, r, 4, "Precio (no se ve en la foto)" if not costo else "Nombre (cortado en la foto)")
+        if f.get("_repetido_de"):
+            falta = f"Repetido: en el catálogo se usa {f['_repetido_de']}, que te cuesta menos"
+        elif not costo:
+            falta = "Precio (no se ve en la foto)"
+        else:
+            falta = "Nombre (cortado en la foto)"
+        celda(pend, r, 4, falta)
     r = 4 + len(pendientes) + 1
     for pest, total in TOTAL_EN_APP.items():
         vistos = sum(1 for p in productos if p["pestana_app"] == pest) + \
@@ -443,7 +464,7 @@ def generar_excel(productos, pendientes, ruta: Path):
         celda(pend, r, 1, f"{pest}: la app dice {total} artículos y en las fotos se ven {vistos}. "
                           "Manda capturas de los que faltan.", NOTA_F)
         r += 1
-    for col, w in zip("ABCD", (14, 36, 18, 30)):
+    for col, w in zip("ABCD", (14, 40, 18, 70)):
         pend.column_dimensions[col].width = w
 
     wb.save(ruta)
@@ -493,7 +514,10 @@ def main():
     tv = sum(p["precio"] for p in productos)
     print(f"\n{len(productos)} productos | inversión {tc:,.2f} | venta {tv:,} | "
           f"ganancia {tv - tc:,.2f} ({(tv - tc) / tv:.1%} margen)")
-    print(f"Pendientes: {len(pendientes)}")
+    reps = [f for f in pendientes if f.get("_repetido_de")]
+    print(f"Pendientes: {len(pendientes) - len(reps)} | Repetidos (no salen): {len(reps)}")
+    for f in reps:
+        print(f"  REPETIDO {f['nombre_app']} (${float(f['costo']):,.2f}) -> se usa {f['_repetido_de']}")
 
 
 if __name__ == "__main__":

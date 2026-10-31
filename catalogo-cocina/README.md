@@ -32,6 +32,8 @@ Después se redondea a precio "de tienda": abajo de $1,000 termina en 9 ($599), 
 
 Además, cada rango tiene un **precio mínimo** (lo que costaría el producto más caro del rango anterior), para que nunca vendas más barato algo que te costó más.
 
+**Productos repetidos:** si dos productos tienen el mismo `nombre_catalogo`, en el catálogo sale solo el que te cuesta menos; el otro aparece en la hoja *Pendientes* del Excel como repetido. Si en realidad son distintos, ponles nombres diferentes en el CSV.
+
 ## Para agregar productos o cambiar precios
 
 1. Agrega una fila en `productos.csv` (con su `pestana_app`) (o cambia el `costo`). Si quieres un aumento distinto para un producto, pon por ejemplo `0.70` (= +70 %) en `aumento_manual`.
