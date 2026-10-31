@@ -1,15 +1,16 @@
-# Catálogo de Cocina (Food Prep)
+# Catálogo de Cocina
 
-Catálogo para clientes y lista de precios interna, armados a partir de las capturas de la app de venta a empleados (pestaña **Food Prep**).
+Catálogo para clientes y lista de precios interna, armados a partir de las capturas de la app de venta a empleados (pestañas **CW & BW** y **Food Prep**).
 
 ## Archivos
 
 | Archivo | Para qué sirve |
 |---|---|
-| `salida/catalogo_food_prep.pdf` | Catálogo para mandar a clientes (A4, 2 páginas). **No muestra costos.** |
-| `salida/catalogo_food_prep.png` | El mismo catálogo en una sola imagen, para WhatsApp o estados. |
-| `salida/catalogo_food_prep.html` | Versión web del catálogo. |
-| `salida/precios_internos_food_prep.xlsx` | **Solo para ti**: costo, % de aumento, precio de venta, ganancia y margen, con fórmulas. |
+| `salida/catalogo_cocina.pdf` | Catálogo completo para clientes (A4, 3 páginas). **No muestra costos.** |
+| `salida/catalogo_sartenes_y_baterias.png` | Imagen solo de sartenes y baterías, para WhatsApp o estados. |
+| `salida/catalogo_licuadoras_y_mas.png` | Imagen solo de licuadoras, batidoras y exprimidores. |
+| `salida/catalogo_cocina.html` | Versión web del catálogo completo. |
+| `salida/precios_internos_cocina.xlsx` | **Solo para ti**: costo, % de aumento, precio de venta, ganancia y margen, con fórmulas. Hojas: Precios, Resumen (por pestaña), Reglas, Pendientes. |
 | `productos.csv` | Lista de productos y costos (aquí se agregan productos nuevos). |
 | `generar_catalogo.py` | Vuelve a generar todo a partir del CSV. |
 
@@ -26,9 +27,11 @@ Aumento por rango de costo (más % en lo barato para que la ganancia en pesos va
 
 Después se redondea a precio "de tienda": abajo de $1,000 termina en 9 ($599), arriba termina en 49 o 99 ($1,499).
 
+Además, cada rango tiene un **precio mínimo** (lo que costaría el producto más caro del rango anterior), para que nunca vendas más barato algo que te costó más.
+
 ## Para agregar productos o cambiar precios
 
-1. Agrega una fila en `productos.csv` (o cambia el `costo`). Si quieres un aumento distinto para un producto, pon por ejemplo `0.70` (= +70 %) en `aumento_manual`.
+1. Agrega una fila en `productos.csv` (con su `pestana_app`) (o cambia el `costo`). Si quieres un aumento distinto para un producto, pon por ejemplo `0.70` (= +70 %) en `aumento_manual`.
 2. Ejecuta `python3 generar_catalogo.py`.
 
 En el Excel también puedes cambiar costos (azul), el aumento manual (amarillo) o las reglas en la hoja **Reglas**, y todo se recalcula solo.

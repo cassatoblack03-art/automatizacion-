@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo de Cocina</title>
+<style>
+  :root {
+    --ink: #1f2328;
+    --muted: #6b7280;
+    --line: #e7e2dc;
+    --paper: #ffffff;
+    --bg: #faf7f3;
+    --accent: #c2410c;
+    --accent-soft: #fff1e8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Inter", "Liberation Sans", Arial, sans-serif; }
+  .page { max-width: 820px; margin: 0 auto; padding: 36px 32px 28px; background: var(--paper); }
+  header { border-bottom: 3px solid var(--accent); padding-bottom: 16px; margin-bottom: 8px; }
+  h1 { margin: 0; font-size: 34px; letter-spacing: -0.5px; }
+  .sub { margin-top: 6px; color: var(--muted); font-size: 15px; }
+  .meta { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 12px;
+    padding: 4px 10px; border-radius: 999px; }
+  .cat { margin-top: 22px; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--accent);
+    margin: 0 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); break-after: avoid; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 12px 12px 10px;
+    display: flex; flex-direction: column; break-inside: avoid; background: #fff; }
+  .name { font-weight: 600; font-size: 14px; line-height: 1.25; }
+  .desc { color: var(--muted); font-size: 12px; margin-top: 4px; flex: 1; }
+  .price { margin-top: 10px; font-size: 22px; font-weight: 800; color: var(--ink); }
+  .price::after { content: " MXN"; font-size: 11px; font-weight: 600; color: var(--muted); }
+  footer { margin-top: 26px; padding-top: 12px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 12px; display: flex; justify-content: space-between; gap: 12px;
+    flex-wrap: wrap; }
+  .contact { color: var(--ink); font-weight: 700; font-size: 14px; }
+  @media (max-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } .page { padding: 24px 16px; } }
+  @page { size: A4; margin: 12mm; }
+  @media print { html, body { background: #fff; } .page { padding: 0; max-width: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Catálogo de Cocina</h1>
+    <div class="sub">Sartenes · Baterías · Licuadoras · Batidoras · Exprimidores</div>
+    <div class="meta"><span class="pill">39 productos</span><span class="pill">Precios vigentes: noviembre 2026</span></div>
+  </header>
+  <section class="cat"><h2>Sartenes</h2><div class="grid"><article class="card"><div class="name">Sartén Character Roja 20 cm</div><div class="desc">&nbsp;</div><div class="price">$179</div></article><article class="card"><div class="name">Sartén Vital Roja 20 cm</div><div class="desc">&nbsp;</div><div class="price">$229</div></article><article class="card"><div class="name">Sartén Character Roja 28 cm</div><div class="desc">&nbsp;</div><div class="price">$259</div></article><article class="card"><div class="name">Sartén Vital Roja 24 cm</div><div class="desc">&nbsp;</div><div class="price">$269</div></article><article class="card"><div class="name">Sartén Vital Roja 26 cm</div><div class="desc">&nbsp;</div><div class="price">$289</div></article><article class="card"><div class="name">Sartén Trendy Titanium 20 cm</div><div class="desc">&nbsp;</div><div class="price">$369</div></article><article class="card"><div class="name">Sartén Trendy Titanium 24 cm</div><div class="desc">&nbsp;</div><div class="price">$389</div></article><article class="card"><div class="name">Crepera Hard Titanium Expert 25 cm</div><div class="desc">&nbsp;</div><div class="price">$419</div></article></div></section><section class="cat"><h2>Juegos de sartenes</h2><div class="grid"><article class="card"><div class="name">Juego de 3 sartenes Character Rojo</div><div class="desc">20, 24 y 28 cm</div><div class="price">$599</div></article><article class="card"><div class="name">Juego de 4 sartenes Vital Rojo</div><div class="desc">12, 20, 24 y 26 cm</div><div class="price">$819</div></article><article class="card"><div class="name">Juego de 3 sartenes Trendy Titanium Beige</div><div class="desc">20, 24 y 28 cm</div><div class="price">$1,199</div></article></div></section><section class="cat"><h2>Baterías de cocina</h2><div class="grid"><article class="card"><div class="name">Batería Supercook 9 piezas + licuadora</div><div class="desc">Color negro</div><div class="price">$1,349</div></article><article class="card"><div class="name">Set Hard Titanium+ Black 6 piezas</div><div class="desc">&nbsp;</div><div class="price">$1,399</div></article><article class="card"><div class="name">Batería Easy Care Roja 17 piezas</div><div class="desc">&nbsp;</div><div class="price">$1,599</div></article><article class="card"><div class="name">Batería Excite Azul 14 piezas</div><div class="desc">Antiadherente</div><div class="price">$1,649</div></article></div></section><section class="cat"><h2>Licuadoras</h2><div class="grid"><article class="card"><div class="name">Licuadora Infinyforce XL Roja 10 vel.</div><div class="desc">&nbsp;</div><div class="price">$599</div></article><article class="card"><div class="name">Licuadora Infinyforce XL Blanca 12 vel.</div><div class="desc">&nbsp;</div><div class="price">$639</div></article><article class="card"><div class="name">Licuadora Infinyforce XL Roja 12 vel.</div><div class="desc">&nbsp;</div><div class="price">$639</div></article><article class="card"><div class="name">Licuadora Infinyforce XL Negra 14 vel.</div><div class="desc">&nbsp;</div><div class="price">$699</div></article><article class="card"><div class="name">Licuadora Ultraforce+ 2 vel.</div><div class="desc">&nbsp;</div><div class="price">$869</div></article><article class="card"><div class="name">Licuadora Ultraforce+ 8 vel.</div><div class="desc">&nbsp;</div><div class="price">$909</div></article></div></section><section class="cat"><h2>Licuadoras de alto rendimiento</h2><div class="grid"><article class="card"><div class="name">Licuadora Ultraforce Pro Inox</div><div class="desc">Acabado acero inoxidable</div><div class="price">$1,499</div></article><article class="card"><div class="name">Licuadora Ultraforce Pro Negra</div><div class="desc">Acabado negro</div><div class="price">$1,549</div></article><article class="card"><div class="name">Licuadora Infinymix</div><div class="desc">Alta potencia</div><div class="price">$2,349</div></article><article class="card"><div class="name">Licuadora Ultraforce Cook</div><div class="desc">Licua y cocina</div><div class="price">$2,399</div></article></div></section><section class="cat"><h2>Licuadoras personales</h2><div class="grid"><article class="card"><div class="name">Licuadora portátil Light Mix Eucalyptus</div><div class="desc">Vaso para llevar</div><div class="price">$539</div></article><article class="card"><div class="name">Licuadora portátil Light Mix Nest</div><div class="desc">Vaso para llevar</div><div class="price">$539</div></article><article class="card"><div class="name">Licuadora personal Blend Up</div><div class="desc">Con vasos para llevar</div><div class="price">$1,299</div></article></div></section><section class="cat"><h2>Batidoras de inmersión</h2><div class="grid"><article class="card"><div class="name">Batidora de inmersión Turbomix</div><div class="desc">200 W</div><div class="price">$319</div></article><article class="card"><div class="name">Batidora Turbomix Max con accesorios</div><div class="desc">400 W</div><div class="price">$539</div></article><article class="card"><div class="name">Batidora de inmersión Daily Chef</div><div class="desc">&nbsp;</div><div class="price">$699</div></article></div></section><section class="cat"><h2>Procesadores y picadores</h2><div class="grid"><article class="card"><div class="name">Picador Choppeo</div><div class="desc">&nbsp;</div><div class="price">$719</div></article><article class="card"><div class="name">Mini procesador Actimix</div><div class="desc">&nbsp;</div><div class="price">$849</div></article></div></section><section class="cat"><h2>Exprimidores y extractores</h2><div class="grid"><article class="card"><div class="name">Exprimidor de cítricos básico</div><div class="desc">Color negro</div><div class="price">$269</div></article><article class="card"><div class="name">Exprimidor Power Press</div><div class="desc">40 W · Negro / inox</div><div class="price">$289</div></article><article class="card"><div class="name">Exprimidor Turbo Press Inox</div><div class="desc">100 W</div><div class="price">$549</div></article><article class="card"><div class="name">Extractor de jugos Frutelia Plus Negro</div><div class="desc">&nbsp;</div><div class="price">$689</div></article><article class="card"><div class="name">Extractor de jugos Frutelia Plus Metal</div><div class="desc">400 W</div><div class="price">$819</div></article><article class="card"><div class="name">Extractor en frío Slow Juicer Juice n Clean</div><div class="desc">Extracción lenta</div><div class="price">$2,049</div></article></div></section>
+  <footer>
+    <div>Precios en pesos mexicanos. Sujetos a disponibilidad.</div>
+    
+  </footer>
+</div>
+</body>
+</html>
