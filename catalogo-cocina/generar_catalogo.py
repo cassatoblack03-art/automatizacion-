@@ -48,7 +48,7 @@ PESTANAS = ["CW & BW", "Food Prep"]
 # Imágenes PNG para WhatsApp: (título, categorías que incluye, nombre base del archivo)
 # Si un grupo tiene más de MAX_POR_IMAGEN productos se parte en varias imágenes
 # (catalogo_sartenes_1.png, _2.png, ...) para que se lean bien en el celular.
-MAX_POR_IMAGEN = 15
+MAX_POR_IMAGEN = 12
 IMAGENES = [
     ("Sartenes y juegos de sartenes", ["Sartenes", "Juegos de sartenes"], "catalogo_sartenes"),
     ("Ollas, cazos, baterías y accesorios", ["Ollas y cazos", "Baterías de cocina", "Accesorios"],
@@ -80,6 +80,7 @@ TOTAL_EN_APP = {"Food Prep": 37}
 BASE = Path(__file__).resolve().parent
 SALIDA = BASE / "salida"
 CSV_PATH = BASE / "productos.csv"
+FOTOS = BASE / "fotos"  # una foto por producto (columna "foto" del CSV)
 HTML_COMPLETO = "catalogo_cocina.html"
 PDF_COMPLETO = "catalogo_cocina.pdf"
 EXCEL = "precios_internos_cocina.xlsx"
@@ -135,6 +136,18 @@ def cargar_productos():
             listos.append({**fila, "nombre_catalogo": nombre, "costo": costo,
                            "manual": manual, "precio": calcular_precio(costo, manual)})
 
+    # Foto: la del producto, o la de otro renglón con el mismo nombre de catálogo (claves repetidas)
+    fotos_por_nombre = {}
+    with open(CSV_PATH, newline="", encoding="utf-8") as f:
+        for fila in csv.DictReader(f):
+            foto = (fila.get("foto") or "").strip()
+            if foto and (FOTOS / foto).exists():
+                fotos_por_nombre.setdefault((fila.get("nombre_catalogo") or "").strip().lower(), foto)
+    for p in listos:
+        foto = (p.get("foto") or "").strip()
+        if not (foto and (FOTOS / foto).exists()):
+            p["foto"] = fotos_por_nombre.get(p["nombre_catalogo"].lower(), "")
+
     # Mismo nombre de catálogo = mismo producto para el cliente (la app a veces trae 2 claves
     # para lo mismo). Se queda el más barato para ti; los demás van a "Pendientes" como repetidos.
     por_nombre = {}
@@ -164,7 +177,15 @@ def pesos(n: float) -> str:
 # ---------------------------------------------------------------------------
 # Catálogo para clientes (NO muestra costos)
 # ---------------------------------------------------------------------------
-def generar_html(productos, subtitulo: str) -> str:
+ICONO_SIN_FOTO = (
+    '<svg viewBox="0 0 64 64" width="56" height="56" aria-hidden="true">'
+    '<ellipse cx="26" cy="36" rx="20" ry="11" fill="none" stroke="#cfc8bf" stroke-width="3"/>'
+    '<path d="M44 33 L60 25" stroke="#cfc8bf" stroke-width="4" stroke-linecap="round"/></svg>'
+)
+
+
+def generar_html(productos, subtitulo: str, base_fotos: str = "../fotos/") -> str:
+    """base_fotos: ruta (relativa o file://) a la carpeta de fotos desde donde se abre el HTML."""
     secciones = []
     categoria_actual = None
     tarjetas = []
@@ -182,8 +203,14 @@ def generar_html(productos, subtitulo: str) -> str:
             categoria_actual = p["categoria"]
             tarjetas = []
         desc = (p.get("descripcion") or "").strip()
+        foto = (p.get("foto") or "").strip()
+        if foto:
+            img = f'<div class="ph"><img src="{html.escape(base_fotos + foto)}" alt=""></div>'
+        else:
+            img = f'<div class="ph sin-foto">{ICONO_SIN_FOTO}<span>Foto próximamente</span></div>'
         tarjetas.append(
             '<article class="card">'
+            f'{img}'
             f'<div class="name">{html.escape(p["nombre_catalogo"])}</div>'
             f'<div class="desc">{html.escape(desc) if desc else "&nbsp;"}</div>'
             f'<div class="price">{pesos(p["precio"])}</div>'
@@ -225,6 +252,10 @@ def generar_html(productos, subtitulo: str) -> str:
   .grid {{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }}
   .card {{ border: 1px solid var(--line); border-radius: 10px; padding: 12px 12px 10px;
     display: flex; flex-direction: column; break-inside: avoid; background: #fff; }}
+  .ph {{ aspect-ratio: 1 / 1; margin: -4px -4px 8px; border-radius: 8px; background: #fff;
+    display: flex; align-items: center; justify-content: center; overflow: hidden; }}
+  .ph img {{ width: 100%; height: 100%; object-fit: contain; }}
+  .ph.sin-foto {{ background: #faf7f3; flex-direction: column; gap: 4px; color: #a8a29e; font-size: 11px; }}
   .name {{ font-weight: 600; font-size: 14px; line-height: 1.25; }}
   .desc {{ color: var(--muted); font-size: 12px; margin-top: 4px; flex: 1; }}
   .price {{ margin-top: 10px; font-size: 22px; font-weight: 800; color: var(--ink); }}
@@ -266,6 +297,7 @@ const trabajos = JSON.parse(process.argv[1]);
   const page = await browser.newPage({ viewport: { width: 820, height: 400 }, deviceScaleFactor: 2 });
   for (const t of trabajos) {
     await page.goto('file://' + t.html);
+    await page.evaluate(async () => { await Promise.all([...document.images].map(i => i.complete ? null : new Promise(r => { i.onload = i.onerror = r; }))); });
     if (t.pdf) await page.pdf({ path: t.pdf, format: 'A4', printBackground: true });
     if (t.png) await page.screenshot({ path: t.png, fullPage: true });
   }
@@ -494,7 +526,7 @@ def main():
                 sufijo = f"_{i + 1}" if n_partes > 1 else ""
                 titulo = f"{titulo_img} · {i + 1} de {n_partes}" if n_partes > 1 else titulo_img
                 h = Path(tmp) / f"{base}{sufijo}.html"
-                h.write_text(generar_html(parte, titulo), encoding="utf-8")
+                h.write_text(generar_html(parte, titulo, FOTOS.as_uri() + "/"), encoding="utf-8")
                 trabajos.append({"html": str(h), "png": str(SALIDA / f"{base}{sufijo}.png")})
         exportar_con_navegador(trabajos)
 

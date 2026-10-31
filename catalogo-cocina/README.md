@@ -12,10 +12,14 @@ Catálogo para clientes y lista de precios interna, armados a partir de las capt
 | `salida/catalogo_licuadoras_y_mas_*.png` | Imágenes de licuadoras, batidoras y exprimidores. |
 | `salida/catalogo_cocina.html` | Versión web del catálogo completo. |
 | `salida/precios_internos_cocina.xlsx` | **Solo para ti**: costo, % de aumento, precio de venta, ganancia y margen, con fórmulas. Hojas: Precios, Resumen (por pestaña), Reglas, Pendientes. |
-| `productos.csv` | Lista de productos y costos (aquí se agregan productos nuevos). |
+| `productos.csv` | Lista de productos y costos (aquí se agregan productos nuevos). La columna `foto` dice qué archivo de `fotos/` usa cada producto. |
+| `fotos/` | Foto de cada producto, recortada de las capturas de la app (fondo blanco, 320×320). |
+| `herramientas/` | Scripts con los que se recortaron las fotos (lector de texto + recorte automático; `overrides.json` tiene los recortes hechos a mano). |
 | `generar_catalogo.py` | Vuelve a generar todo a partir del CSV. |
 
-Las imágenes traen máximo 15 productos cada una (si hay más se parten en _1, _2, ...) para que se lean bien en el celular.
+Cada tarjeta lleva la foto del producto. Si en la app la foto no se ve (por ejemplo, porque quedó cortada arriba de la captura), sale un ícono con "Foto próximamente".
+
+Las imágenes traen máximo 12 productos cada una (si hay más se parten en _1, _2, ...) para que se lean bien en el celular.
 
 ## Cómo se calculó el precio de venta
 
@@ -36,7 +40,7 @@ Además, cada rango tiene un **precio mínimo** (lo que costaría el producto m�
 
 ## Para agregar productos o cambiar precios
 
-1. Agrega una fila en `productos.csv` (con su `pestana_app`) (o cambia el `costo`). Si quieres un aumento distinto para un producto, pon por ejemplo `0.70` (= +70 %) en `aumento_manual`.
+1. Agrega una fila en `productos.csv` (con su `pestana_app` y, si tienes, el nombre de su foto en `foto`) (o cambia el `costo`). Si quieres un aumento distinto para un producto, pon por ejemplo `0.70` (= +70 %) en `aumento_manual`.
 2. Ejecuta `python3 generar_catalogo.py`.
 
 En el Excel también puedes cambiar costos (azul), el aumento manual (amarillo) o las reglas en la hoja **Reglas**, y todo se recalcula solo.
