@@ -28,7 +28,7 @@ from openpyxl.utils import column_index_from_string, get_column_letter
 # CONFIGURACIÓN — cambia aquí lo que quieras
 # ---------------------------------------------------------------------------
 TITULO = "Catálogo de Cocina"
-SUBTITULO = "Sartenes · Baterías · Licuadoras · Batidoras · Exprimidores"
+SUBTITULO = "Sartenes · Ollas · Baterías · Licuadoras · Batidoras · Exprimidores"
 CONTACTO = ""  # p. ej. "Pedidos por WhatsApp: 55 1234 5678". Vacío = no se muestra.
 VIGENCIA = "Precios vigentes: noviembre 2026"
 
@@ -42,16 +42,24 @@ REGLAS = [
     (1200, 0.45),  # $1,200 en adelante     -> +45 %
 ]
 
-# Líneas (una imagen PNG por línea, para mandar por WhatsApp): (pestaña en la app, título, archivo)
-LINEAS = [
-    ("CW & BW", "Sartenes y baterías", "catalogo_sartenes_y_baterias.png"),
-    ("Food Prep", "Licuadoras, batidoras y exprimidores", "catalogo_licuadoras_y_mas.png"),
+# Orden de las pestañas de la app en el Excel (hoja Resumen).
+PESTANAS = ["CW & BW", "Food Prep"]
+
+# Imágenes PNG para WhatsApp (cortas, para que se lean bien en el celular):
+# (título, categorías que incluye, archivo)
+IMAGENES = [
+    ("Sartenes y juegos de sartenes", ["Sartenes", "Juegos de sartenes"], "catalogo_sartenes.png"),
+    ("Ollas, cazos y baterías", ["Ollas y cazos", "Baterías de cocina"], "catalogo_ollas_y_baterias.png"),
+    ("Licuadoras, batidoras y exprimidores",
+     ["Licuadoras", "Licuadoras de alto rendimiento", "Licuadoras personales", "Batidoras de inmersión",
+      "Procesadores y picadores", "Exprimidores y extractores"], "catalogo_licuadoras_y_mas.png"),
 ]
 
 ORDEN_CATEGORIAS = [
     # CW & BW
     "Sartenes",
     "Juegos de sartenes",
+    "Ollas y cazos",
     "Baterías de cocina",
     # Food Prep
     "Licuadoras",
@@ -394,7 +402,7 @@ def generar_excel(productos, pendientes, ruta: Path):
     encabezado(res, 3, ["Pestaña app", "Productos", "Inversión (MXN)", "Venta (MXN)", "Ganancia (MXN)",
                         "Margen sobre venta"])
     rango = lambda k: f"Precios!${C[k]}${primera}:${C[k]}${ultima}"  # noqa: E731
-    pestanas = [l[0] for l in LINEAS] + sorted({p["pestana_app"] for p in productos} - {l[0] for l in LINEAS})
+    pestanas = PESTANAS + sorted({p["pestana_app"] for p in productos} - set(PESTANAS))
     for i, pest in enumerate(pestanas):
         r = 4 + i
         celda(res, r, 1, pest)
@@ -448,16 +456,21 @@ def main():
     trabajos = [{"html": str(html_path), "pdf": str(SALIDA / PDF_COMPLETO)}]
 
     with tempfile.TemporaryDirectory() as tmp:
-        for pest, titulo_linea, png in LINEAS:
-            de_linea = [p for p in productos if p["pestana_app"] == pest]
-            if not de_linea:
+        for titulo_img, categorias, png in IMAGENES:
+            de_imagen = [p for p in productos if p["categoria"] in categorias]
+            if not de_imagen:
                 continue
             h = Path(tmp) / f"{png}.html"
-            h.write_text(generar_html(de_linea, titulo_linea), encoding="utf-8")
+            h.write_text(generar_html(de_imagen, titulo_img), encoding="utf-8")
             trabajos.append({"html": str(h), "png": str(SALIDA / png)})
         exportar_con_navegador(trabajos)
 
     generar_excel(productos, pendientes, SALIDA / EXCEL)
+
+    en_imagenes = {c for _, cats, _ in IMAGENES for c in cats}
+    sueltas = sorted({p["categoria"] for p in productos} - en_imagenes)
+    if sueltas:
+        print(f"AVISO: estas categorías no salen en ninguna imagen PNG (agrégalas a IMAGENES): {sueltas}")
 
     print(f"{'Pestaña':10} {'Producto':42} {'Costo':>9} {'Venta':>7} {'Ganancia':>9} {'Aum.':>6}")
     for p in productos:
