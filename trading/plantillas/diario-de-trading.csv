@@ -1,0 +1,5 @@
+fecha,activo,temporalidad,direccion,setup,entrada,stop,tp,salida,resultado_R,riesgo_pct,seguiste_plan,emocion,captura_antes,captura_despues,notas
+2026-01-05,EURUSD,H1,compra,pullback-tendencia,1.0850,1.0820,1.0910,1.0910,,1,si,tranquilo,,,"EJEMPLO: borra estas filas y apunta las tuyas"
+2026-01-06,XAUUSD,H1,venta,pullback-tendencia,2400,2406,2388,2406,,1,si,nervioso,,,"EJEMPLO: stop tocado; el setup era válido, pérdida normal"
+2026-01-07,GBPUSD,M15,compra,impulsiva,1.2700,1.2690,1.2730,1.2690,,2,no,FOMO,,,"EJEMPLO: entré fuera de plan y con el doble de riesgo"
+2026-01-08,US500,H4,compra,ruptura-retesteo,5200,5180,5240,5230,,1,si,tranquilo,,,"EJEMPLO: cierre manual antes del TP"
